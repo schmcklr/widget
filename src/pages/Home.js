@@ -3,6 +3,7 @@ import {Widget, addResponseMessage} from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 
 const Home = () => {
+    //new Message effect on icon
     useEffect(() => {
     addResponseMessage("Hey ich bin Liefy der Lieferbot. Kann ich dir weiterhelfen?");
     }, []);
@@ -11,7 +12,7 @@ const Home = () => {
     const handleNewUserMessage = (newMessage) => {
         console.log(`New message incoming! ${newMessage}`);
     };
-    
+
     return (
         <div className="container">
             <div className="row">
