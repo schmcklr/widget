@@ -4,7 +4,7 @@ import "react-chat-widget/lib/styles.css";
 
 //Import socket client and Connect to RASA server
 import {io} from "socket.io-client";
-const socket = io("http://localhost:5005");
+const socket = io("http://0.0.0.0:5005");
 
 
 const Home = () => {
@@ -36,7 +36,7 @@ const Home = () => {
         item.classList.add("message");
         item.classList.add(`message_${type}`);
         messages.appendChild(item);
-    }
+    };
 
     socket.on('bot_uttered', function (response) {
     console.log("Bot uttered:", response);
