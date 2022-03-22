@@ -4,10 +4,19 @@ import "react-chat-widget/lib/styles.css";
 
 //Import socket client and Connect to RASA server
 import {io} from "socket.io-client";
-const socket = io("http://0.0.0.0:5005");
+const socket = io("http://localhost:5005", {
+        pathname: '/socket.io',
+        transports: ['websocket'],
+    });
+//const socket = io("http://localhost:5005");
+//const SERVER = "http://localhost:5005";
+//const socket = io(SERVER, { transports: ["websocket"] });
+
+
 
 
 const Home = () => {
+
 
     //Connecting with Server - positive response
     socket.on('connect', function () {
@@ -29,7 +38,6 @@ const Home = () => {
     //bot responses
     const messages = document.getElementById('messages');
 
-
     function appendMessage(msg, type) {
         const item = document.createElement('div');
         item.textContent = msg;
@@ -46,18 +54,17 @@ const Home = () => {
     });
 
 
-
-
-/*    //messages from bot to frontend
+   //messages from bot to frontend
     socket.on("bot_uttered", (message) => {
         addResponseMessage(message);
     });
-
+/*
     //new Message effect on icon
     useEffect(() => {
     addResponseMessage("Hey ich bin Liefy der Lieferbot. Kann ich dir weiterhelfen?");
     }, []);
 */
+
 
 
     return (
@@ -73,7 +80,12 @@ const Home = () => {
                     enim placeat quisquam.</p>
 
             </div>
-            <Widget handleNewUserMessage={handleNewUserMessage}/>
+            <Widget handleNewUserMessage={handleNewUserMessage}
+                    initPayload={"/get_started"}
+                    socketUrl={"http://localhost:5005"}
+                    socketPath={"/socket.io/"}
+                    customData={{"language": "en"}}
+                    />
         </div>
     );
 };
