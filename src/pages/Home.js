@@ -4,7 +4,7 @@ import "react-chat-widget/lib/styles.css";
 
 //Import socket client and Connect to RASA server
 import {io} from "socket.io-client";
-const socket = io("http://localhost:5005", {
+const socket = io("http://localhost:5005/webhooks/rest/webhook", {
         pathname: '/socket.io',
         transports: ['websocket'],
     });
@@ -82,7 +82,7 @@ const Home = () => {
             </div>
             <Widget handleNewUserMessage={handleNewUserMessage}
                     initPayload={"/get_started"}
-                    socketUrl={"http://localhost:5005"}
+                    socketUrl={"http://localhost:5005/webhooks/rest/webhook"}
                     socketPath={"/socket.io/"}
                     customData={{"language": "en"}}
                     />
