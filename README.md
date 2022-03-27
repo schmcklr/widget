@@ -5,6 +5,6 @@
 
 # Comments
   - Chat widget is programmed in the Home.js file
-  - Currently rest api is used to connect to the rasa api
+  - Currently rest api is used to connect to rasa
  
   
