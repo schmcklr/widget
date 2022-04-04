@@ -1,0 +1,17 @@
+.rcw-conversation-container > .rcw-header {
+  //background-color: #D60265;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+
+}
+
+.rcw-message > .rcw-response {
+  color: black;
+}
+.quick-buttons {
+  list-style: circle;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+

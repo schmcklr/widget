@@ -1,7 +1,7 @@
 import {useEffect} from "react";
-import {Widget, addResponseMessage} from "react-chat-widget";
+import {Widget, addResponseMessage, setQuickButtons,addUserMessage, handleQuickButtonClicked} from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
-
+import "./Home.css";
 //socket io connection which was used before -> switched to Rest Api
 //Import socket client and Connect to RASA server
 /*
@@ -142,6 +142,59 @@ const Home = () => {
     };
 
 
+
+let buttons = [
+  {
+    label: 'Vegan',
+    value: 'Vegan',
+  },
+
+
+  {
+    label: 'Vegetarisch',
+    value: 'Vegetarisch',
+  },
+    {
+    label: 'Vegan',
+    value: 'Vegan',
+  },
+    {
+    label: 'Vegan',
+    value: 'Vegan',
+  },
+    {
+    label: 'Vegan',
+    value: 'Vegan',
+  },
+    {
+    label: 'Vegan',
+    value: 'Vegan',
+  },
+    {
+    label: 'Vegan',
+    value: 'Vegan',
+  }
+
+
+];
+
+
+
+setQuickButtons(buttons);
+
+
+const handleQuickButtonClicked = (value) => {
+
+addUserMessage(value)
+    console.log(value);
+}
+
+
+
+
+
+
+
     return (
         <div className="container">
             <div className="row">
@@ -156,14 +209,17 @@ const Home = () => {
 
             </div>
             <Widget handleNewUserMessage={handleNewUserMessage}
+                    handleQuickButtonClicked={handleQuickButtonClicked}
                     initPayload={"/get_started"}
-                // socketUrl={"http://localhost:5005"}
-                    socketPath={"/socket.io/"}
-                    customData={{"language": "en"}}
+                    customData={{"language": "de"}}
                     params={{'storage':'session'}}
                     title={"Liefy der Chatbot"}
                     subtitle={"How can I help you?"}
                     showTimeStamp={"yes"}
+                    emojis={'YES'}
+                    resizable={'YES'}
+
+
 
             />
         </div>
