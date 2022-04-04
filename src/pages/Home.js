@@ -47,7 +47,11 @@ const Home = () => {
     )
 
     // Displaying results in chat widget
+
+    // Display text in widget
     .then(json => addResponseMessage(json[0].text))
+    // Used for texting: display text in console
+    //.then(json => console.log(json[0].getAttribute("data-payload")))
 
 
     };
