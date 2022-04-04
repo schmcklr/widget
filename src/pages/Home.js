@@ -2,111 +2,120 @@ import {useEffect} from "react";
 import {Widget, addResponseMessage, setQuickButtons,addUserMessage, handleQuickButtonClicked} from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 import "./Home.css";
-//socket io connection which was used before -> switched to Rest Api
-//Import socket client and Connect to RASA server
-/*
-import {io} from "socket.io-client";
-const socket = io("http://localhost:5005/webhooks/rest/webhook", {
-        pathname: '/socket.io',
-        transports: ['websocket'],
-    });
-*/
+
+//TODO: Restructure Code maybe in seperate files and not all function in the home.js (Norman)
+//TODO: After the button clicked and send to BE no responses are coming -> fix
+
+
 const Home = () => {
 
     //******************************************************************
     //Rest Api connection in use
     //******************************************************************
 
+    // Used for submitting messages and getting responses
+    function handleMessagesAndResponse (newMessage){
 
-    // handle user Message typed in via keyboard
-    const handleNewUserMessage = (newMessage) => {
-
-        //********************POST*********************
+         //********************POST*********************
         // POST request using fetch() (currently used for sending/receiving messages)
         fetch("http://localhost:5005/webhooks/rest/webhook", {
 
-        // Adding method type
-        method: "POST",
+            // Adding method type
+            method: "POST",
 
-        // Adding body or contents to send
-        body: JSON.stringify({
-            sender: "test_user",
-            //message which was typed in via keyboard
-            message: newMessage
-        }),
+            // Adding body or contents to send
+            body: JSON.stringify({
+                sender: "test_user",
+                //message which was typed in via keyboard
+                message: newMessage
+            }),
 
-        // Adding headers to the request
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    })
+            // Adding headers to the request
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
 
-    // Converting to JSON
-    .then(response => response.json()
+            // Converting to JSON
+            .then(response => response.json()
+            )
 
-    )
+            // Displaying results in chat widget
 
-    // Displaying results in chat widget
+            // Display text in widget
+            //.then(json => addResponseMessage(json[0].text))
+            // Used for texting: display text in console
+            //.then(json => console.log(json))
+            .then(function (json) {
+                let jsonData
+                jsonData = json
+                botResponse(jsonData)
+                console.log(jsonData[0].text)
+            });
 
-    // Display text in widget
-    .then(json => addResponseMessage(json[0].text))
-    // Used for texting: display text in console
-    //.then(json => console.log(json[0].getAttribute("data-payload")))
+    }
 
+    // handle user Message typed in via keyboard
+    const handleNewUserMessage = (newMessage) => {
+        handleMessagesAndResponse (newMessage)
 
     };
 
 
+    // function which checks message type of Bot Response
+    function botResponse(jsonData) {
 
-let buttons = [
-  {
-    label: 'Vegan',
-    value: 'Vegan',
-  },
-
-
-  {
-    label: 'Vegetarisch',
-    value: 'Vegetarisch',
-  },
-    {
-    label: 'Vegan',
-    value: 'Vegan',
-  },
-    {
-    label: 'Vegan',
-    value: 'Vegan',
-  },
-    {
-    label: 'Vegan',
-    value: 'Vegan',
-  },
-    {
-    label: 'Vegan',
-    value: 'Vegan',
-  },
-    {
-    label: 'Vegan',
-    value: 'Vegan',
-  }
+        let i;
+        for (i=0; i < jsonData.length ; i++) {
 
 
-];
+            if (jsonData[i].hasOwnProperty('buttons')) {
+                addResponseMessage(jsonData[i].text)
+                console.log(jsonData[i].buttons)
+                handleButtons(jsonData[i].buttons)
+
+            }
+
+            //TODO: Handle Pictures and Text separately, searching for an identifier
+
+            else {
+                console.log(jsonData[i].text)
+                addResponseMessage(jsonData[i].text)
+            }
+        }
+    }
 
 
+    // handle bot response button
+    function handleButtons (jsonData){
 
-setQuickButtons(buttons);
+        let i;
+        let buttons = [];
 
+        for (i=0; i < jsonData.length ; i++) {
 
-const handleQuickButtonClicked = (value) => {
+            console.log(jsonData[i].title)
+            buttons[i] = {
+                        label: jsonData[i].title,
+                        value: jsonData[i].title,
+                      };
 
-addUserMessage(value)
-    console.log(value);
-}
+        }
+        setQuickButtons(buttons);
 
+    }
 
+    // function that is triggerd if a button is clicked
+    const handleQuickButtonClicked = (value) => {
 
+        addUserMessage(value)
+        console.log(value)
+        handleMessagesAndResponse(value)
 
+        //TODO: removes all buttons, in some cases that should not be the case because mor options can be selected, how can we identify?
+        setQuickButtons([]);
+
+    }
 
 
 
