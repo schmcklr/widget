@@ -14,98 +14,8 @@ const socket = io("http://localhost:5005/webhooks/rest/webhook", {
 const Home = () => {
 
     //******************************************************************
-    //socket io connection which was used before -> switched to Rest Api
-    //******************************************************************
-
-    /*
-    //Connecting with Server - positive response
-    socket.on('connect', function () {
-        console.log("Connected to Socket.io server");
-    });
-
-    // Write any connection errors to the console
-    socket.on('connect_error', (error) => {
-        console.error(error);
-    });
-
-    /*
-    // send messages from client to server
-    const handleNewUserMessage = (newMessage) => {
-        console.log(newMessage);
-        socket.emit("user_uttered", newMessage);
-        socket.on("bot_uttered", (message) => {
-        addResponseMessage(message);
-    });
-    };
-
-    //bot responses
-    const messages = document.getElementById('messages');
-
-    function appendMessage(msg, type) {
-        const item = document.createElement('div');
-        item.textContent = msg;
-        item.classList.add("message");
-        item.classList.add(`message_${type}`);
-        messages.appendChild(item);
-    };
-
-    socket.on('bot_uttered', function (response) {
-    console.log("Bot uttered:", response);
-    if (response.text) {
-        appendMessage(response.text, "received");
-    }
-    });
-
-
-   //messages from bot to frontend
-    socket.on("bot_uttered", (message) => {
-        addResponseMessage(message);
-    });
-/*
-    //new Message effect on icon
-    useEffect(() => {
-    addResponseMessage("Hey ich bin Liefy der Lieferbot. Kann ich dir weiterhelfen?");
-    }, []);
-*/
-
-
-    //******************************************************************
     //Rest Api connection in use
     //******************************************************************
-
-    //********************GET*********************
-    //GET request using fetch() currently not in use
-    /*
-
-
-    fetch("http://localhost:5005/webhooks/rest/webhook")
-
-        // Converting received data to JSON
-        .then(response => response.json())
-        .then(json => {
-
-        // Create a variable to store HTML
-        let li = `<tr><th>Name</th><th>Email</th></tr>`;
-
-        // Loop through each data and add a table row
-        json.forEach(user => {
-            li += `<tr>
-                <td>${user.name} </td>
-                <td>${user.email}</td>        
-            </tr>`;
-        });
-
-    // Display result
-    //document.getElementById("users").innerHTML = li;
-
-        addResponseMessage(li);
-
-});
-
-*/
-
-
-
 
 
     // handle user Message typed in via keyboard
@@ -138,6 +48,7 @@ const Home = () => {
 
     // Displaying results in chat widget
     .then(json => addResponseMessage(json[0].text))
+
 
     };
 
