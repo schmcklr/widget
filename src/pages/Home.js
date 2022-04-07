@@ -1,5 +1,5 @@
-import {useEffect} from "react";
-import {Widget, addResponseMessage, setQuickButtons,addUserMessage, handleQuickButtonClicked} from "react-chat-widget";
+import {Component, useEffect} from "react";
+import {Widget, addResponseMessage, setQuickButtons,addUserMessage, renderCustomComponent, handleQuickButtonClicked} from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 import "./Home.css";
 
@@ -14,7 +14,7 @@ const Home = () => {
     //******************************************************************
 
     // Used for submitting messages and getting responses
-    function handleMessagesAndResponse (newMessage){
+    function handleMessagesAndResponses (newMessage){
 
          //********************POST*********************
         // POST request using fetch() (currently used for sending/receiving messages)
@@ -50,15 +50,14 @@ const Home = () => {
                 let jsonData
                 jsonData = json
                 botResponse(jsonData)
-                console.log(jsonData[0].text)
+                //TODO: Remove development functions
+                console.log(jsonData)
             });
-
     }
 
     // handle user Message typed in via keyboard
     const handleNewUserMessage = (newMessage) => {
-        handleMessagesAndResponse (newMessage)
-
+        handleMessagesAndResponses (newMessage)
     };
 
 
@@ -68,23 +67,25 @@ const Home = () => {
         let i;
         for (i=0; i < jsonData.length ; i++) {
 
-
+            //buttons
             if (jsonData[i].hasOwnProperty('buttons')) {
                 addResponseMessage(jsonData[i].text)
                 console.log(jsonData[i].buttons)
                 handleButtons(jsonData[i].buttons)
-
+            }
+            //pictures
+            else if (jsonData[i].hasOwnProperty("image")) {
+                handleImages(jsonData[i].image)
             }
 
             //TODO: Handle Pictures and Text separately, searching for an identifier
-
+            //text
             else {
                 console.log(jsonData[i].text)
                 addResponseMessage(jsonData[i].text)
             }
         }
     }
-
 
     // handle bot response button
     function handleButtons (jsonData){
@@ -99,22 +100,31 @@ const Home = () => {
                         label: jsonData[i].title,
                         value: jsonData[i].title,
                       };
-
         }
         setQuickButtons(buttons);
-
     }
 
     // function that is triggerd if a button is clicked
     const handleQuickButtonClicked = (value) => {
-
         addUserMessage(value)
         console.log(value)
-        handleMessagesAndResponse(value)
+        handleMessagesAndResponses(value)
 
         //TODO: removes all buttons, in some cases that should not be the case because mor options can be selected, how can we identify?
         setQuickButtons([]);
+    }
 
+    // handle bot response Images
+    function handleImages (jsonData) {
+        console.log(jsonData)
+        renderCustomComponent(Image, {src: jsonData})
+    }
+
+    //needed to render pictures
+    class Image extends Component {
+        render() {
+            return <img  alt="placeholder" src={this.props.src} height="150" width="250" ></img>
+        }
     }
 
 
@@ -147,6 +157,6 @@ const Home = () => {
 
             />
         </div>
-        );
-    };
-    export default Home;
+    );
+};
+export default Home;
