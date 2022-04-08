@@ -1,7 +1,8 @@
 import {Component, useEffect} from "react";
 import {Widget, addResponseMessage, setQuickButtons,addUserMessage, renderCustomComponent, handleQuickButtonClicked} from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
-import "./Home.css";
+import "./Home.css"
+import "./styles.scss";
 
 //TODO: Restructure Code maybe in seperate files and not all function in the home.js (Norman)
 //TODO: After the button clicked and send to BE no responses are coming -> fix
