@@ -8,10 +8,13 @@ import {
   Routes
 } from "react-router-dom";
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Contact from "./pages/Contact";
+import {Container, Navbar} from "react-bootstrap";
+
+
 
 const Nav = () => <ul className="nav justify-content-center">
     <li className="nav-item">
@@ -30,9 +33,10 @@ const Nav = () => <ul className="nav justify-content-center">
 
 
 
+
 function App() {
   return (
-        <Router>
+      <Router>
             <Nav />
             <Routes>
                 <Route exact path="/" element={<Home />}/>
