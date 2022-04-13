@@ -1,52 +1,61 @@
 //options for header with title
 .rcw-conversation-container > .rcw-header {
-  background-color:orangered;
+  background: rgba(174,0,0,1);
   border-radius: 10px 10px 0 0;
-  text-align: center;
+  text-align: left;
+  font-weight: bolder;
+  font-size: 100px;
   //altering size of header
-  padding: 5px 0px 15px;
+  padding: 0px 0px 0px 10px;
+  height: 64px;
 }
+
+
 
 //options for bot text
 .rcw-response .rcw-message-text {
-  background-color:orangered;
-  padding: 20px 40px 20px
+  background-color: gray;
+  max-width: 300px;
+  padding: 5px 15px 5px
+
 }
 
 //options for user text
 .rcw-client .rcw-message-text {
-  background-color: orangered
+  background: rgba(174,0,0,0.6);
+  max-width: 300px;
+  padding: 10px 15px 10px
 }
 
 //options for closing button
 .rcw-conversation-container .rcw-close-button {
-    background-color: orangered;
+    background-color: rgba(174,0,0,0.9);
 }
 
 //launcher icon before u start the widget / before u open it
 .rcw-launcher {
-  background-color: orangered;
+  background-color: rgba(174,0,0,0.9);
 }
 
 //changing the messages in general (user and bot) - font, color and so on
 .rcw-message {
-  color: white;
+  color: black;
 }
 //changing the background color of messages container
 .rcw-messages-container {
-  background-color: #ffA500;
+ // background-color: white;
 }
 
 //customize box at the bottom of the widget, where also the type in field is included
 .rcw-sender {
-  background-color: orangered;
+  //background-color: #fb4f14;
 }
 
 //customize send button
 .rcw-send {
-  background-color: orangered;
+  //background-color: orangered;
 }
 
 .rcw-picker-btn {
-  background-color: orangered;
+ // background-color: orangered;
 }

@@ -1,12 +1,26 @@
 import {Component, useEffect} from "react";
-import {Widget, addResponseMessage, setQuickButtons,addUserMessage, renderCustomComponent, handleQuickButtonClicked} from "react-chat-widget";
+import {
+    Widget,
+    addResponseMessage,
+    setQuickButtons,
+    addUserMessage,
+    renderCustomComponent,
+    handleQuickButtonClicked
+} from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 import "./Home.css"
 import "./styles.scss";
+import * as PropTypes from "prop-types";
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import custom components
+import CustomCardGroup from "../../customComponents/CustomCardGroup";
+import CustomCarousel from "../../customComponents/CustomCarousel";
+import CustomCard from "../../customComponents/CustomCard";
+import CustomImage from "../../customComponents/CustomImage";
+
 
 //TODO: Restructure Code maybe in seperate files and not all function in the home.js (Norman)
 //TODO: After the button clicked and send to BE no responses are coming -> fix
-
 
 const Home = () => {
 
@@ -15,9 +29,9 @@ const Home = () => {
     //******************************************************************
 
     // Used for submitting messages and getting responses
-    function handleMessagesAndResponses (newMessage){
+    function handleMessagesAndResponses(newMessage) {
 
-         //********************POST*********************
+        //********************POST*********************
         // POST request using fetch() (currently used for sending/receiving messages)
         fetch("http://localhost:5005/webhooks/rest/webhook", {
 
@@ -56,17 +70,23 @@ const Home = () => {
             });
     }
 
+
     // handle user Message typed in via keyboard
     const handleNewUserMessage = (newMessage) => {
-        handleMessagesAndResponses (newMessage)
-    };
+        handleMessagesAndResponses(newMessage)
+
+        //TODO: Remove testing functions
+        renderCustomComponent(CustomCard, {text: newMessage})
+        renderCustomComponent(CustomCardGroup, {text: newMessage})
+        //renderCustomComponent(Custom_Card2, {text: newMessage})
+        //renderCustomComponent(CustomCarousel, {text: newMessage})
+    }
 
 
     // function which checks message type of Bot Response
     function botResponse(jsonData) {
-
         let i;
-        for (i=0; i < jsonData.length ; i++) {
+        for (i = 0; i < jsonData.length; i++) {
 
             //buttons
             if (jsonData[i].hasOwnProperty('buttons')) {
@@ -79,7 +99,7 @@ const Home = () => {
                 handleImages(jsonData[i].image)
             }
 
-            //TODO: Handle Pictures and Text separately, searching for an identifier
+                //TODO: Handle Pictures and Text separately, searching for an identifier
             //text
             else {
                 console.log(jsonData[i].text)
@@ -89,18 +109,18 @@ const Home = () => {
     }
 
     // handle bot response button
-    function handleButtons (jsonData){
+    function handleButtons(jsonData) {
 
         let i;
         let buttons = [];
 
-        for (i=0; i < jsonData.length ; i++) {
+        for (i = 0; i < jsonData.length; i++) {
 
             console.log(jsonData[i].title)
             buttons[i] = {
-                        label: jsonData[i].title,
-                        value: jsonData[i].title,
-                      };
+                label: jsonData[i].title,
+                value: jsonData[i].title,
+            };
         }
         setQuickButtons(buttons);
     }
@@ -116,19 +136,10 @@ const Home = () => {
     }
 
     // handle bot response Images
-    function handleImages (jsonData) {
+    function handleImages(jsonData) {
         console.log(jsonData)
-        renderCustomComponent(Image, {src: jsonData})
+        renderCustomComponent(CustomImage, {src: jsonData})
     }
-
-    //needed to render pictures
-    class Image extends Component {
-        render() {
-            return <img  alt="placeholder" src={this.props.src} height="150" width="250" ></img>
-        }
-    }
-
-
 
     return (
         <div className="container">
@@ -139,25 +150,26 @@ const Home = () => {
                 <h2 className="">Wie funktioniert Liefy?</h2>
                 <hr/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam blanditiis cum debitis
-                        facilis ipsum magnam praesentium qui quo ratione soluta tempora ullam, unde vero voluptatibus. Alias
-                        enim placeat quisquam.</p>
+                    facilis ipsum magnam praesentium qui quo ratione soluta tempora ullam, unde vero voluptatibus. Alias
+                    enim placeat quisquam.</p>
 
             </div>
-            <Widget handleNewUserMessage={handleNewUserMessage}
-                    handleQuickButtonClicked={handleQuickButtonClicked}
-                    initPayload={"/get_started"}
-                    customData={{"language": "de"}}
-                    params={{'storage':'session'}}
-                    title={"Liefy der Chatbot"}
-                    subtitle={"How can I help you?"}
-                    showTimeStamp={"yes"}
-                    emojis={'YES'}
-                    resizable={'YES'}
-
-
-
-            />
+            <div className="App1">
+                <Widget handleNewUserMessage={handleNewUserMessage}
+                        handleQuickButtonClicked={handleQuickButtonClicked}
+                        initPayload={"/get_started"}
+                        customData={{"language": "de"}}
+                        params={{'storage': 'session'}}
+                        title={"Liefy der Restaurant Bot"}
+                        subtitle={""}
+                        showTimeStamp={"yes"}
+                        emojis={'YES'}
+                    //resizable={'NO'}
+                />
+            </div>
         </div>
     );
 };
+
+
 export default Home;
