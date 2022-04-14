@@ -1,6 +1,6 @@
 import {Component} from "react";
 import {Card, Carousel} from "react-bootstrap";
-import "./tets.css";
+
 
 export default class CustomCarousel extends Component {
     render() {
