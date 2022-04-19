@@ -37,7 +37,7 @@ const Nav = () => <ul className="nav justify-content-center">
 const Navigation = () => {
     return (
         <>
-            <Navbar bg="dark" variant="dark" color='rgba(174,0,0,1)'>
+            <Navbar fixed='top' bg="dark" variant="dark" color='rgba(174,0,0,1)'>
                 <Container>
                     <Navbar.Brand href="/">Liefy</Navbar.Brand>
                     <Nav className="me-auto">

@@ -145,7 +145,7 @@ const Home = () => {
     return (
         <div className="container">
             <div className="row">
-                <h1 className="text-left p-5">Liefy die Lieferbox <Badge bg="secondary">Beta</Badge>
+                <h1 className="text-left p-5"><br/>Liefy die Lieferbox <Badge bg="secondary">Beta</Badge>
                 </h1>
                 <hr/>
                 <br/>
@@ -274,9 +274,66 @@ const Home = () => {
                         <hr/>
                     </Row>
                     <Row>
-                        <Col><h4 className="text-center">Wir können dir helfen</h4></Col>
-                        <Col><h4 className="text-center">Wir können dir helfen</h4></Col>
-                        <Col><h4 className="text-center">Wir können dir helfen</h4></Col>
+                        <Col>
+                            <h4 className="text-left">Wir können dir helfen</h4>
+                        <Card style={{width: '18rem', margin: '12px', whiteSpace: 'pre-wrap'}}>
+                                <Card.Img variant="top"
+                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
+                                <Card.Body>
+                                    <Card.Title>Schnitzel Wiener Art</Card.Title>
+                                    <Card.Text>
+                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
+                                        Zitronenschnitz und
+                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <Badge bg="success">fettig</Badge>{' '}<Badge
+                                        bg="danger">deftig</Badge>{' '}<Badge
+                                        bg="secondary">gebacken</Badge>{' '}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col alignItems={'center'}>
+                            <h4 className="text-left">Wir können dir helfen</h4>
+                        <Card style={{width: '18rem', margin: '12px', whiteSpace: 'pre-wrap'}}>
+                                <Card.Img variant="top"
+                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
+                                <Card.Body>
+                                    <Card.Title>Schnitzel Wiener Art</Card.Title>
+                                    <Card.Text>
+                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
+                                        Zitronenschnitz und
+                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <Badge bg="success">fettig</Badge>{' '}<Badge
+                                        bg="danger">deftig</Badge>{' '}<Badge
+                                        bg="secondary">gebacken</Badge>{' '}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                            </Col>
+                        <Col>
+                            <h4 className="text-left">Wir können dir helfen</h4>
+                        <Card style={{width: '18rem', margin: '12px', whiteSpace: 'pre-wrap'}}>
+                                <Card.Img variant="top"
+                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
+                                <Card.Body>
+                                    <Card.Title>Schnitzel Wiener Art</Card.Title>
+                                    <Card.Text>
+                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
+                                        Zitronenschnitz und
+                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <Badge bg="success">fettig</Badge>{' '}<Badge
+                                        bg="danger">deftig</Badge>{' '}<Badge
+                                        bg="secondary">gebacken</Badge>{' '}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                            </Col>
                     </Row>
                 </Container>
                 <br/>
@@ -288,68 +345,73 @@ const Home = () => {
             </div>
 
             <div className="d-flex justify-content-around">
+                <Container>
+                    <Row>
+                        <Col>
+                            <Card style={{width: '25rem', margin: '12px', whiteSpace: 'pre-wrap'}}>
+                                <Card.Img variant="top"
+                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
+                                <Card.Body>
+                                    <Card.Title>Schnitzel Wiener Art</Card.Title>
+                                    <Card.Text>
+                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
+                                        Zitronenschnitz und
+                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <Badge bg="success">fettig</Badge>{' '}<Badge
+                                        bg="danger">deftig</Badge>{' '}<Badge
+                                        bg="secondary">gebacken</Badge>{' '}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col>
+                            <Card style={{width: '25rem', margin: '12px'}}>
+                                <Card.Img variant="top"
+                                          src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
+                                <Card.Body>
+                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Text>
+                                        Some quick example text to build on the card title and make up the bulk of
+                                        the card's content.
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
 
+                        </Col>
+                        </Row>
+                    <Row>
+                        <Col>
+                            <Card style={{width: '25rem', margin: '12px'}}>
+                                <Card.Img variant="top"
+                                          src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
+                                <Card.Body>
+                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Text>
+                                        Some quick example text to build on the card title and make up the bulk of
+                                        the card's content.
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col>
+                            <Card style={{width: '25rem', margin: '12px'}}>
+                                <Card.Img variant="top"
+                                          src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
+                                <Card.Body>
+                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Text>
+                                        Some quick example text to build on the card title and make up the bulk of
+                                        the card's content.
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+            </Container>
 
-                <Card style={{width: '25rem', margin: '12px'}}>
-                    <Card.Img variant="top"
-                              src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                    <Card.Body>
-                        <Card.Title>Schnitzel Wiener Art</Card.Title>
-                        <Card.Text>
-                            Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und
-                            Preiselbeeren, mit gebackenen Kartoffelstaberln
-                        </Card.Text>
-                        <Card.Text>
-                            <Badge bg="success">fettig</Badge>{' '}<Badge bg="danger">deftig</Badge>{' '}<Badge
-                            bg="secondary">gebacken</Badge>{' '}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card style={{width: '25rem', margin: '12px'}}>
-                    <Card.Img variant="top"
-                              src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card style={{width: '25rem', margin: '12px'}}>
-                    <Card.Img variant="top"
-                              src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card style={{width: '25rem', margin: '12px'}}>
-                    <Card.Img variant="top"
-                              src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card style={{width: '25rem', margin: '12px'}}>
-                    <Card.Img variant="top"
-                              src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-            </div>
+        </div>
 
 
             <div className="App">
