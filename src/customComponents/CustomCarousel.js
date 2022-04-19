@@ -4,7 +4,7 @@ import {Card, Carousel} from "react-bootstrap";
 
 export default class CustomCarousel extends Component {
     render() {
-        return (<Carousel  id="myCarousel" variant="dark" indicators={false} slide={false}>
+        return (<Carousel id="myCarousel" variant="dark" indicators={false} slide={false}>
             <Carousel.Item interval={1000}>
                 <Card style={{width: '15rem'}}>
                     <Card.Img variant="top"

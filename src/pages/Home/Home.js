@@ -17,6 +17,7 @@ import CustomCardGroup from "../../customComponents/CustomCardGroup";
 import CustomCarousel from "../../customComponents/CustomCarousel";
 import CustomCard from "../../customComponents/CustomCard";
 import CustomImage from "../../customComponents/CustomImage";
+import {Accordion, Badge, Button, Card, Col, Container, ListGroup, Placeholder, Row} from "react-bootstrap";
 
 
 //TODO: Restructure Code maybe in seperate files and not all function in the home.js (Norman)
@@ -77,9 +78,9 @@ const Home = () => {
 
         //TODO: Remove testing functions
         renderCustomComponent(CustomCard, {text: newMessage})
-        renderCustomComponent(CustomCardGroup, {text: newMessage})
+        //renderCustomComponent(CustomCardGroup, {text: newMessage})
         //renderCustomComponent(Custom_Card2, {text: newMessage})
-        //renderCustomComponent(CustomCarousel, {text: newMessage})
+        renderCustomComponent(CustomCarousel, {text: newMessage})
     }
 
 
@@ -144,17 +145,214 @@ const Home = () => {
     return (
         <div className="container">
             <div className="row">
-                <h1 className="text-center p-5 display-1">Liefy der Chatbot</h1>
+                <h1 className="text-left p-5">Liefy die Lieferbox <Badge bg="secondary">Beta</Badge>
+                </h1>
                 <hr/>
                 <br/>
-                <h2 className="">Wie funktioniert Liefy?</h2>
+                <Container>
+                    <Row>
+                        <Col>
+                            <h2>Wie funktioniert Liefy?</h2>
+                            <hr/>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam blanditiis cum
+                                debitis
+                                facilis ipsum magnam praesentium qui quo ratione soluta tempora ullam, unde vero
+                                voluptatibus. Alias
+                                enim placeat quisquam.</p>
+
+
+                            <Accordion defaultActiveKey={['0']} alwaysOpen>
+                                <Accordion.Item eventKey="0">
+                                    <Accordion.Header>Beratung &nbsp; <Badge
+                                        bg="secondary">New</Badge></Accordion.Header>
+                                    <Accordion.Body>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item defaultActiveKey={['0']}>
+                                    <Accordion.Header>Persönlichkeit</Accordion.Header>
+                                    <Accordion.Body>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item defaultActiveKey={['0']}>
+                                    <Accordion.Header>Einzigartig</Accordion.Header>
+                                    <Accordion.Body>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item defaultActiveKey={['0']}>
+                                    <Accordion.Header>Zeitsparend</Accordion.Header>
+                                    <Accordion.Body>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+
+                            </Accordion>
+                            <br/>
+
+
+                        </Col>
+                        <Col><h2>Top 10</h2>
+                            <hr/>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam blanditiis cum
+                                debitis
+                                facilis ipsum magnam praesentium qui quo ratione soluta tempora ullam, unde vero
+                                voluptatibus. Alias
+                                enim placeat quisquam.</p>
+                            <ListGroup as="ol" numbered>
+                                <ListGroup.Item
+                                    as="li"
+                                    className="d-flex justify-content-between align-items-start"
+                                >
+                                    <div className="ms-2 me-auto">
+                                        <div className="fw-bold">Subheading</div>
+                                        Cras justo odio
+                                    </div>
+                                    <Badge bg="primary" pill>
+                                        14
+                                    </Badge>
+                                </ListGroup.Item>
+                                <ListGroup.Item
+                                    as="li"
+                                    className="d-flex justify-content-between align-items-start"
+                                >
+                                    <div className="ms-2 me-auto">
+                                        <div className="fw-bold">Subheading</div>
+                                        Cras justo odio
+                                    </div>
+                                    <Badge bg="primary" pill>
+                                        14
+                                    </Badge>
+                                </ListGroup.Item>
+                                <ListGroup.Item
+                                    as="li"
+                                    className="d-flex justify-content-between align-items-start"
+                                >
+                                    <div className="ms-2 me-auto">
+                                        <div className="fw-bold">Subheading</div>
+                                        Cras justo odio
+                                    </div>
+                                    <Badge bg="primary" pill>
+                                        14
+                                    </Badge>
+                                </ListGroup.Item>
+                            </ListGroup>
+
+
+                        </Col>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam blanditiis cum
+                            debitis
+                            facilis ipsum magnam praesentium qui quo ratione soluta tempora ullam, unde vero
+                            voluptatibus. Alias
+                            enim placeat quisquam.</p>
+                        <hr/>
+                    </Row>
+                    <Row>
+                        <Col><h4 className="text-center">Wir können dir helfen</h4></Col>
+                        <Col><h4 className="text-center">Wir können dir helfen</h4></Col>
+                        <Col><h4 className="text-center">Wir können dir helfen</h4></Col>
+                    </Row>
+                </Container>
+                <br/>
                 <hr/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam blanditiis cum debitis
                     facilis ipsum magnam praesentium qui quo ratione soluta tempora ullam, unde vero voluptatibus. Alias
                     enim placeat quisquam.</p>
 
             </div>
-            <div className="App1">
+
+            <div className="d-flex justify-content-around">
+
+
+                <Card style={{width: '25rem', margin: '12px'}}>
+                    <Card.Img variant="top"
+                              src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
+                    <Card.Body>
+                        <Card.Title>Schnitzel Wiener Art</Card.Title>
+                        <Card.Text>
+                            Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und
+                            Preiselbeeren, mit gebackenen Kartoffelstaberln
+                        </Card.Text>
+                        <Card.Text>
+                            <Badge bg="success">fettig</Badge>{' '}<Badge bg="danger">deftig</Badge>{' '}<Badge
+                            bg="secondary">gebacken</Badge>{' '}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card style={{width: '25rem', margin: '12px'}}>
+                    <Card.Img variant="top"
+                              src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
+                    <Card.Body>
+                        <Card.Title>Card Title</Card.Title>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card style={{width: '25rem', margin: '12px'}}>
+                    <Card.Img variant="top"
+                              src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
+                    <Card.Body>
+                        <Card.Title>Card Title</Card.Title>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card style={{width: '25rem', margin: '12px'}}>
+                    <Card.Img variant="top"
+                              src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
+                    <Card.Body>
+                        <Card.Title>Card Title</Card.Title>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card style={{width: '25rem', margin: '12px'}}>
+                    <Card.Img variant="top"
+                              src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
+                    <Card.Body>
+                        <Card.Title>Card Title</Card.Title>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </div>
+
+
+            <div className="App">
                 <Widget handleNewUserMessage={handleNewUserMessage}
                         handleQuickButtonClicked={handleQuickButtonClicked}
                         initPayload={"/get_started"}
@@ -163,7 +361,7 @@ const Home = () => {
                         title={"Liefy der Restaurant Bot"}
                         subtitle={""}
                         showTimeStamp={"yes"}
-                        emojis={'YES'}
+                        emojis={'NO'}
                     //resizable={'NO'}
                 />
             </div>
