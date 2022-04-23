@@ -65,9 +65,10 @@ const Home = () => {
             .then(function (json) {
                 let jsonData
                 jsonData = json
+                console.log(json)
                 botResponse(jsonData)
                 //TODO: Remove development functions
-                console.log(jsonData)
+
             });
     }
 
@@ -90,11 +91,27 @@ const Home = () => {
         for (i = 0; i < jsonData.length; i++) {
 
             //buttons
-            if (jsonData[i].hasOwnProperty('buttons')) {
+            if (jsonData[i].hasOwnProperty('custom')) {
+
+                console.log(jsonData[i])
+                console.log(jsonData[i].custom)
+                console.log(jsonData[i]['custom'].data[0])
+                console.log(jsonData[i]['custom'].data[0].description)
+
+                    renderCustomComponent(CustomCarousel, {description: jsonData[i]['custom'].data[0].description,
+                        src: jsonData[i]['custom'].data[0].image, title: jsonData[i]['custom'].data[0].title,
+                        button: jsonData[i]['custom'].data[0].buttons[0].title})
+                }
+               // renderCustomComponent(CustomCarousel, {text: jsonData[i] })
+                //console.log(jsonData[i])
+                //handleButtons(jsonData[i].buttons)
+
+            else if (jsonData[i].hasOwnProperty('buttons')) {
                 addResponseMessage(jsonData[i].text)
                 console.log(jsonData[i].buttons)
                 handleButtons(jsonData[i].buttons)
             }
+
             //pictures
             else if (jsonData[i].hasOwnProperty("image")) {
                 handleImages(jsonData[i].image)
@@ -120,7 +137,7 @@ const Home = () => {
             console.log(jsonData[i].title)
             buttons[i] = {
                 label: jsonData[i].title,
-                value: jsonData[i].title,
+                value: jsonData[i].payload,
             };
         }
         setQuickButtons(buttons);

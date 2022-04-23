@@ -4,6 +4,7 @@ import {Card, CardGroup} from "react-bootstrap";
 export default class CustomCardGroup extends Component {
     render() {
         return (<CardGroup>
+
             <Card style={{width: '15rem'}}>
                 <Card.Img variant="top"
                           src="https://image.geo.de/30131936/t/zp/v3/w1440/r0/-/vollkornbuerger-f-80996477-jpg--74900-.jpg"/>

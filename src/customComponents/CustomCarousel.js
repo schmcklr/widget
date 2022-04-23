@@ -1,27 +1,27 @@
 import {Component} from "react";
-import {Card, Carousel} from "react-bootstrap";
+import {Button, Card, Carousel} from "react-bootstrap";
 
 
 export default class CustomCarousel extends Component {
     render() {
         return (<Carousel id="myCarousel" variant="dark" indicators={false} slide={false}>
-            <Carousel.Item interval={1000}>
+            <Carousel.Item>
                 <Card style={{width: '15rem'}}>
                     <Card.Img variant="top"
-                              src="https://image.geo.de/30131936/t/zp/v3/w1440/r0/-/vollkornbuerger-f-80996477-jpg--74900-.jpg"/>
+                              src={this.props.src} />
                     <Card.Body>
-                        <Card.Title>Card title</Card.Title>
+                        <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
+                            {this.props.description}
                         </Card.Text>
+                        <Button variant="outline-danger">Wählen</Button>{' '}
                     </Card.Body>
                     <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
+                        <small className="text-muted">Powered by Liefy</small>
                     </Card.Footer>
                 </Card>
             </Carousel.Item>
-            <Carousel.Item interval={500}>
+            <Carousel.Item>
                 <Card style={{width: '15rem'}}>
                     <Card.Img variant="top"
                               src="https://medien.bremen.de/media/464/288/italienisch-essen-bruschetta-quelle--beats-.jpg"/>
