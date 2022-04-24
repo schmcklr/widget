@@ -73,41 +73,166 @@ const Home = () => {
     }
 
 
+    //TODO: REMOVE
+
+     //addResponseMessage("hallo");
+    let testButtons = [{
+                label: 'Test',
+                value: 'Test',
+            },
+    {
+                label: 'Deutsch',
+                value: 'Test',
+            },{
+                label: 'Amerikanisch',
+                value: 'Test',
+            },{
+                label: 'Bayrisch',
+                value: 'Test',
+            },{
+                label: 'Nichts',
+                value: 'Test',
+            },{
+                label: 'Alles',
+                value: 'Test',
+            },{
+                label: 'Test',
+                value: 'Test',
+            },{
+                label: 'Test',
+                value: 'Test',
+            },{
+                label: 'Test',
+                value: 'Test',
+            },{
+                label: 'Test',
+                value: 'Test',
+            },{
+                label: 'Test',
+                value: 'Test',
+            }];
+
+    setQuickButtons(testButtons);
+
+
+    let filledArray = new Array(10).fill(null).map(()=> ({'title':'goodbye'}, {'title':'goye'}))
+
+    let items = [
+        {
+            'title': 'Schnitzel Wiener Art',
+            'categorie': 'bayerisch',
+            'price': '13,80 €',
+            'describtion': 'Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und Preiselbeeren, mit gebackenen Kartoffelstaberln',
+            'src': 'https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s=',
+            'button': 'Wählen'
+        },
+        {
+            'title': 'Knusper-Wels',
+            'categorie': 'bayerisch',
+            'price': '13,80 €',
+            'describtion': 'Im Sesam-Knuspermantel gebackenen Filets vom Wels, mit Zitronenschnitz, Remouladensoße  und gebackenen Kartoffelstaberln',
+            'src': 'https://pbs.twimg.com/media/CyhKCHwXcAAatJw?format=jpg&name=small',
+            'button': 'Wählen',
+            'restaurant': 'Namaste'
+
+        },
+        {
+            'title': 'goodbye',
+            'categorie': 'bayerisch',
+            'price': '13,80 €',
+            'describtion': 'Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und Preiselbeeren, mit gebackenen Kartoffelstaberln',
+            'src': 'https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s=',
+            'button': 'Wählen'
+        },
+
+    ]
+    console.log(filledArray[1].title)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // handle user Message typed in via keyboard
     const handleNewUserMessage = (newMessage) => {
         handleMessagesAndResponses(newMessage)
 
         //TODO: Remove testing functions
         renderCustomComponent(CustomCard, {text: newMessage})
+         renderCustomComponent(CustomCarousel, {items: items})
         //renderCustomComponent(CustomCardGroup, {text: newMessage})
         //renderCustomComponent(Custom_Card2, {text: newMessage})
-        renderCustomComponent(CustomCarousel, {text: newMessage})
+        //renderCustomComponent(CustomCarousel, {text: newMessage})
     }
+
+
 
 
     // function which checks message type of Bot Response
     function botResponse(jsonData) {
         let i;
+        let j;
+        let items = [];
         for (i = 0; i < jsonData.length; i++) {
+            //TODO: REMOVE
+            console.log(jsonData[i])
 
             //buttons
             if (jsonData[i].hasOwnProperty('custom')) {
+
 
                 console.log(jsonData[i])
                 console.log(jsonData[i].custom)
                 console.log(jsonData[i]['custom'].data[0])
                 console.log(jsonData[i]['custom'].data[0].description)
 
+
+                for (j = 0; j < jsonData[i]['custom'].data.length; j++) {
+                    let items = [
+                        {
+                            "description": jsonData[i]['custom'].data[j].description,
+                            "src": jsonData[i]['custom'].data[j].image,
+                            "title": jsonData[i]['custom'].data[j].title,
+                            "button": jsonData[i]['custom'].data[j].buttons[0].title
+                        }
+                    ]
+                }
+
+                renderCustomComponent(CustomCarousel, {items: items})
+
+
+                /*
                     renderCustomComponent(CustomCarousel, {description: jsonData[i]['custom'].data[0].description,
                         src: jsonData[i]['custom'].data[0].image, title: jsonData[i]['custom'].data[0].title,
                         button: jsonData[i]['custom'].data[0].buttons[0].title})
+
+                 */
                 }
                // renderCustomComponent(CustomCarousel, {text: jsonData[i] })
                 //console.log(jsonData[i])
                 //handleButtons(jsonData[i].buttons)
 
             else if (jsonData[i].hasOwnProperty('buttons')) {
-                addResponseMessage(jsonData[i].text)
+
+                if(jsonData[i].hasOwnProperty('text')){
+                    addResponseMessage(jsonData[i].text)
+                }
+                console.log('TEst')
                 console.log(jsonData[i].buttons)
                 handleButtons(jsonData[i].buttons)
             }
@@ -150,7 +275,7 @@ const Home = () => {
         handleMessagesAndResponses(value)
 
         //TODO: removes all buttons, in some cases that should not be the case because mor options can be selected, how can we identify?
-        setQuickButtons([]);
+        //setQuickButtons([]);
     }
 
     // handle bot response Images
@@ -431,16 +556,17 @@ const Home = () => {
         </div>
 
 
-            <div className="App">
+            <div className="Widget">
                 <Widget handleNewUserMessage={handleNewUserMessage}
                         handleQuickButtonClicked={handleQuickButtonClicked}
                         initPayload={"/get_started"}
                         customData={{"language": "de"}}
                         params={{'storage': 'session'}}
-                        title={"Liefy der Restaurant Bot"}
+                        title={"Liefy"}
                         subtitle={""}
                         showTimeStamp={"yes"}
                         emojis={'NO'}
+                        senderPlaceHolder={"Schreibe eine Nachricht..."}
                     //resizable={'NO'}
                 />
             </div>

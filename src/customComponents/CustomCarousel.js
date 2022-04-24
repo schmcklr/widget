@@ -1,61 +1,33 @@
 import {Component} from "react";
-import {Button, Card, Carousel} from "react-bootstrap";
+import {Badge, Button, Card, Carousel, ListGroup} from "react-bootstrap";
+import * as Icon from 'react-bootstrap-icons';
 
-
+import "./cards.scss";
+import {CashCoin} from "react-bootstrap-icons";
 export default class CustomCarousel extends Component {
     render() {
-        return (<Carousel id="myCarousel" variant="dark" indicators={false} slide={false}>
-            <Carousel.Item>
-                <Card style={{width: '15rem'}}>
-                    <Card.Img variant="top"
-                              src={this.props.src} />
-                    <Card.Body>
-                        <Card.Title>{this.props.title}</Card.Title>
-                        <Card.Text>
-                            {this.props.description}
-                        </Card.Text>
-                        <Button variant="outline-danger">Wählen</Button>{' '}
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Powered by Liefy</small>
-                    </Card.Footer>
-                </Card>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Card style={{width: '15rem'}}>
-                    <Card.Img variant="top"
-                              src="https://medien.bremen.de/media/464/288/italienisch-essen-bruschetta-quelle--beats-.jpg"/>
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
-                </Card>
-
-            </Carousel.Item>
-            <Carousel.Item>
-                <Card style={{width: '15rem'}}>
-                    <Card.Img variant="top"
-                              src="https://media.istockphoto.com/photos/arabic-and-middle-eastern-dinner-table-hummus-tabbouleh-salad-salad-picture-id1175505781?k=20&m=1175505781&s=612x612&w=0&h=STomby2lCtcvpl_hxK6RhknQQWrkvpkHcoDLD4zttFk="/>
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
-                </Card>
-            </Carousel.Item>
+        return (<Carousel bsPrefix="customCarousel" className="customCarousel"  variant="dark" indicators={false} slide={false}>
+            {this.props.items.map(item => (<Carousel.Item>
+                    <Card style={{width: '15rem'}} bsPrefix="customCard" className="customCard">
+                        <Card.Img variant="top" className="cardImage"
+                                  src={item.src}/>
+                        <Card.Body>
+                            <Card.Title className="cardTitle">{item.title}</Card.Title>
+                            <Card.Text className="cardText">
+                                {item.describtion}
+                            </Card.Text>
+                            <Card.Text>
+                                <Badge className="cardBadge" bg="secondary">Preis: {item.price}</Badge>{' '}
+                                <Badge className="cardBadge" bg="secondary">{item.categorie}</Badge>{' '}
+                                <Badge className="cardBadge" bg="secondary">{item.restaurant}</Badge>{' '}
+                                <Badge className="cardBadge" bg="secondary">{item.categorie}</Badge>{' '}
+                            </Card.Text>
+                            <Button variant="outline-danger" className="cardButton">{item.button}</Button>{' '}
+                        </Card.Body>
+                    </Card>
+                </Carousel.Item>
+            ))}
         </Carousel>)
-
     }
 
 }
