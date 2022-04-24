@@ -1,45 +1,95 @@
 .customCard{
 
-  background-color: #F8F8F8;
-
+ //background-color: #F8F8F8;
+  border-radius: 10px;
 }
 
 .cardTitle{
   font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.cardSubTitle{
+  font-size: 11px;
+  margin-bottom: 6px;
+  color: gray;
+  vertical-align: middle;
 
 }
 
 .cardText{
   font-size: 11px;
+  margin-bottom: 2px;
 
 }
 
 .cardImage{
-
-
-   //object-fit: cover;
-   //height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 155px;
 }
 
 .cardButton{
    font-size: 12px;
   color: rgba(174,0,0,0.9);
   border-color: rgba(174,0,0,0.9);
+
 }
+
+.cardButton:hover{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+.cardButton:focus{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+
+
+.cardBadgeContainer{
+
+}
+
+
 
 .cardBadge{
   font-size: 10px;
+  margin-top: 0px;
+}
+
+
+.carousel {
+  margin: 1.5rem;
+
+}
+.carousel-inner {
 
 }
 
-.carousel-indicators li {
-  width: 10px;
+.carousel-control-prev {
+ margin-left: -30px;
+  margin-top: 200px;
+  background-color: darkgray;
+  width: 25px;
+  height: 25px;
   border: 1px solid transparent;
-  border-right-width: 0;
-  border-left-width: 0;
-  border-radius: 10px;
-background-color: rgba(169, 29, 42, 0.4);
-height: 10px;
-width: 20px;
+  border-radius: 20px;
+}
 
+.carousel-control-next {
+  margin-right: -30px;
+  margin-top: 200px;
+  background-color: gray;
+  width: 25px;
+  height: 25px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+
+.icon{
+  vertical-align: text-bottom;
 }

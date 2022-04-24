@@ -73,9 +73,11 @@ const Home = () => {
     }
 
 
+
     //TODO: REMOVE
 
-     //addResponseMessage("hallo");
+     addResponseMessage("hallo");
+    addResponseMessage("hallo was machst du gerade kann ich helfen");
     let testButtons = [{
                 label: 'Test',
                 value: 'Test',
@@ -115,7 +117,7 @@ const Home = () => {
     setQuickButtons(testButtons);
 
 
-    let filledArray = new Array(10).fill(null).map(()=> ({'title':'goodbye'}, {'title':'goye'}))
+
 
     let items = [
         {
@@ -124,7 +126,8 @@ const Home = () => {
             'price': '13,80 €',
             'describtion': 'Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und Preiselbeeren, mit gebackenen Kartoffelstaberln',
             'src': 'https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s=',
-            'button': 'Wählen'
+            'button': 'Wählen',
+            'restaurant': 'Hans im Glück'
         },
         {
             'title': 'Knusper-Wels',
@@ -142,11 +145,11 @@ const Home = () => {
             'price': '13,80 €',
             'describtion': 'Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und Preiselbeeren, mit gebackenen Kartoffelstaberln',
             'src': 'https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s=',
-            'button': 'Wählen'
+            'button': 'Wählen',
+            'restaurant': 'Kfc'
         },
 
     ]
-    console.log(filledArray[1].title)
 
 
 
@@ -173,7 +176,7 @@ const Home = () => {
         handleMessagesAndResponses(newMessage)
 
         //TODO: Remove testing functions
-        renderCustomComponent(CustomCard, {text: newMessage})
+        //renderCustomComponent(CustomCard, {text: newMessage})
          renderCustomComponent(CustomCarousel, {items: items})
         //renderCustomComponent(CustomCardGroup, {text: newMessage})
         //renderCustomComponent(Custom_Card2, {text: newMessage})
@@ -267,6 +270,12 @@ const Home = () => {
         }
         setQuickButtons(buttons);
     }
+
+
+
+
+
+
 
     // function that is triggerd if a button is clicked
     const handleQuickButtonClicked = (value) => {
@@ -564,9 +573,9 @@ const Home = () => {
                         params={{'storage': 'session'}}
                         title={"Liefy"}
                         subtitle={""}
-                        showTimeStamp={"yes"}
                         emojis={'NO'}
                         senderPlaceHolder={"Schreibe eine Nachricht..."}
+                        showTimeStamp={false}
                     //resizable={'NO'}
                 />
             </div>
