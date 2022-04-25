@@ -76,8 +76,6 @@ const Home = () => {
 
     //TODO: REMOVE
 
-     addResponseMessage("hallo");
-    addResponseMessage("hallo was machst du gerade kann ich helfen");
     let testButtons = [{
                 label: 'Test',
                 value: 'Test',
@@ -127,7 +125,8 @@ const Home = () => {
             'describtion': 'Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und Preiselbeeren, mit gebackenen Kartoffelstaberln',
             'src': 'https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s=',
             'button': 'Wählen',
-            'restaurant': 'Hans im Glück'
+            'restaurant': 'Hans im Glück',
+            'position': '1'
         },
         {
             'title': 'Knusper-Wels',
@@ -136,7 +135,8 @@ const Home = () => {
             'describtion': 'Im Sesam-Knuspermantel gebackenen Filets vom Wels, mit Zitronenschnitz, Remouladensoße  und gebackenen Kartoffelstaberln',
             'src': 'https://pbs.twimg.com/media/CyhKCHwXcAAatJw?format=jpg&name=small',
             'button': 'Wählen',
-            'restaurant': 'Namaste'
+            'restaurant': 'Namaste',
+            'position': '2'
 
         },
         {
@@ -146,29 +146,11 @@ const Home = () => {
             'describtion': 'Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und Preiselbeeren, mit gebackenen Kartoffelstaberln',
             'src': 'https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s=',
             'button': 'Wählen',
-            'restaurant': 'Kfc'
+            'restaurant': 'Kfc',
+            'position': '3'
         },
 
     ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // handle user Message typed in via keyboard
@@ -177,7 +159,9 @@ const Home = () => {
 
         //TODO: Remove testing functions
         //renderCustomComponent(CustomCard, {text: newMessage})
-         renderCustomComponent(CustomCarousel, {items: items})
+        addResponseMessage("Hallo");
+        addResponseMessage("Hallo was machst du gerade kann ich helfen");
+        renderCustomComponent(CustomCarousel, {items: items})
         //renderCustomComponent(CustomCardGroup, {text: newMessage})
         //renderCustomComponent(Custom_Card2, {text: newMessage})
         //renderCustomComponent(CustomCarousel, {text: newMessage})

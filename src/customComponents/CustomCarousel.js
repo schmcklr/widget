@@ -25,9 +25,9 @@ export default class CustomCarousel extends Component {
             {this.props.items.map(item => (<Carousel.Item>
                     <Card style={{width: '15rem'}} className="customCard">
                         <Card.Img variant="top" className="cardImage"
-                                  src={item.src}/>
+                                  src={item.src} />
                         <Card.Body>
-                            <Card.Title className="cardTitle">{item.title}</Card.Title>
+                            <Card.Title className="cardTitle">{item.title} <Badge className="badgeTitle" pill >#{item.position}</Badge></Card.Title>
                             <Card.Subtitle className="cardSubTitle"><House className="icon"/> {item.restaurant}{' '}
                                 <ClockHistory className="icon"/> 30 min</Card.Subtitle>
                             <Card.Text className="cardText">
@@ -37,12 +37,10 @@ export default class CustomCarousel extends Component {
                                 <Badge className="cardBadge" bg="secondary">{item.categorie}</Badge>{' '}
                                 <Badge className="cardBadge" bg="secondary">Preis: {item.price}</Badge>{' '}
                             </Card.Text>
-                            <Button variant="outline-danger" id="cardButton" className="cardButton"
-                                    onClick={() => handleButtonClicked(item.button)}>{item.button}</Button>{' '}
+                            <Button variant="outline-danger" id="cardButton" className="cardButton" onClick={() => handleButtonClicked(item.button)}>{item.button}</Button>{' '}
                         </Card.Body>
                     </Card>
                 </Carousel.Item>
-
             ))}
         </Carousel>)
     }
