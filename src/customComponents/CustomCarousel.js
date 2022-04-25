@@ -1,5 +1,5 @@
-import {Component} from "react";
-import {Badge, Button, Card, Carousel, ListGroup, Row} from "react-bootstrap";
+import {Component, useEffect, useState} from "react";
+import {Badge, Button, Card, Carousel, Dropdown, DropdownButton, Form, ListGroup, Row} from "react-bootstrap";
 
 
 import "./cards.scss";
@@ -7,14 +7,17 @@ import "./cards.scss";
 
 import {ArrowRight, House, } from 'react-bootstrap-icons';
 import {ClockHistory} from "react-bootstrap-icons";
-import {addUserMessage} from "react-chat-widget";
+import {addResponseMessage, addUserMessage, renderCustomComponent} from "react-chat-widget";
+import CustomCard from "./CustomCard";
 
 
 
 //handleButtonClicked
-function handleButtonClicked(payload) {
-    console.log(payload)
-    addUserMessage(payload)
+function handleButtonClicked(item) {
+    console.log(item.position)
+    addResponseMessage('Vielen Dank für die Nutzung von Liefy!')
+    addResponseMessage('Anbei findest du eine Zusammenfassung deiner Auswahl:')
+    renderCustomComponent(CustomCard, {item})
 }
 
 export default class CustomCarousel extends Component {
@@ -27,7 +30,8 @@ export default class CustomCarousel extends Component {
                         <Card.Img variant="top" className="cardImage"
                                   src={item.src} />
                         <Card.Body>
-                            <Card.Title className="cardTitle">{item.title} <Badge className="badgeTitle" pill >#{item.position}</Badge></Card.Title>
+                            <Card.Title className="cardTitle">{item.title} <Badge className="badgeTitle"
+                                                                                  pill>#{item.position}</Badge></Card.Title>
                             <Card.Subtitle className="cardSubTitle"><House className="icon"/> {item.restaurant}{' '}
                                 <ClockHistory className="icon"/> 30 min</Card.Subtitle>
                             <Card.Text className="cardText">
@@ -35,9 +39,11 @@ export default class CustomCarousel extends Component {
                             </Card.Text>
                             <Card.Text className="cardBadgeContainer">
                                 <Badge className="cardBadge" bg="secondary">{item.categorie}</Badge>{' '}
-                                <Badge className="cardBadge" bg="secondary">Preis: {item.price}</Badge>{' '}
+                                <Badge className="cardBadge" bg="secondary">Preis: {item.price}</Badge>
                             </Card.Text>
-                            <Button variant="outline-danger" id="cardButton" className="cardButton" onClick={() => handleButtonClicked(item.button)}>{item.button}</Button>{' '}
+                            <Button variant="outline-danger" id="cardButton" className="cardButton"
+                                    onClick={() => handleButtonClicked(item)}>{item.button}</Button>
+
                         </Card.Body>
                     </Card>
                 </Carousel.Item>
@@ -46,4 +52,3 @@ export default class CustomCarousel extends Component {
     }
 
 }
-
