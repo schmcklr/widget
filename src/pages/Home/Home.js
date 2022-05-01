@@ -19,6 +19,7 @@ import CustomCard from "../../customComponents/CustomCard";
 import CustomImage from "../../customComponents/CustomImage";
 import {Accordion, Badge, Button, Card, Col, Container, ListGroup, Placeholder, Row} from "react-bootstrap";
 import {ClockHistory, House} from "react-bootstrap-icons";
+import CustomButtonCard from "../../customComponents/CustomButtonCard";
 
 
 //TODO: Restructure Code maybe in seperate files and not all function in the home.js (Norman)
@@ -118,7 +119,7 @@ const Home = () => {
 
 
 
-    let items = [
+    let items2 = [
         {
             'title': 'Schnitzel Wiener Art',
             'categorie': 'bayerisch',
@@ -162,7 +163,8 @@ const Home = () => {
         //renderCustomComponent(CustomCard, {text: newMessage})
         addResponseMessage("Hallo");
         addResponseMessage("Hallo was machst du gerade kann ich helfen");
-        renderCustomComponent(CustomCarousel, {items: items})
+        renderCustomComponent(CustomCarousel, {items: items2});
+        renderCustomComponent(CustomButtonCard, {items: items2});
         //renderCustomComponent(CustomCardGroup, {text: newMessage})
        // renderCustomComponent(CustomCard, {text: newMessage})
         //renderCustomComponent(CustomCarousel, {text: newMessage})

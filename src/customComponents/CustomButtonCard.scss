@@ -1,0 +1,47 @@
+.buttons{
+
+  font-size: 12px;
+  width: 100%;
+  color: rgba(174,0,0,0.9);
+  border-color: rgba(174,0,0,0.9);
+  align-items: center;
+  text-align: center;
+  margin-bottom: 7px;
+
+}
+
+.buttons:hover{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+.buttons:focus{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+.buttons:checked{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+
+.buttonCardTitleBig{
+  font-size: 1.15em;
+  margin-bottom: 11px;
+  color: black;
+}
+
+.buttonCardBadgeTitle{
+  background-color: #ddca63 !important;
+  color: white;
+  font-size: 12px;
+  vertical-align: text-top;
+  margin-top: 2px;
+
+
+
+}
