@@ -81,7 +81,7 @@ export default class CustomButtonCard extends Component {
 
 
     render() {
-      let items = this.props.items;
+
 
         return (
 
@@ -109,7 +109,7 @@ export default class CustomButtonCard extends Component {
 
 
 
-                  {items.map(item => (<Button variant="outline-danger" className="buttons" > {item.title} </Button>))}
+                  {this.props.items.map(item => (<Button variant="outline-danger" className="buttons" > {item} </Button>))}
 
 
 

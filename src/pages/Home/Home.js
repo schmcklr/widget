@@ -164,7 +164,7 @@ const Home = () => {
         addResponseMessage("Hallo");
         addResponseMessage("Hallo was machst du gerade kann ich helfen");
         renderCustomComponent(CustomCarousel, {items: items2});
-        renderCustomComponent(CustomButtonCard, {items: items2});
+       // renderCustomComponent(CustomButtonCard, {items: items2});
         //renderCustomComponent(CustomCardGroup, {text: newMessage})
        // renderCustomComponent(CustomCard, {text: newMessage})
         //renderCustomComponent(CustomCarousel, {text: newMessage})
@@ -178,6 +178,7 @@ const Home = () => {
         let i;
         let j;
         let items = [];
+        console.log(jsonData)
         for (i = 0; i < jsonData.length; i++) {
             //TODO: REMOVE
             console.log(jsonData[i])
@@ -185,22 +186,45 @@ const Home = () => {
             //buttons
             if (jsonData[i].hasOwnProperty('custom')) {
 
+                //console.log(jsonData[i])
+                //console.log(jsonData[i].custom)
+                //console.log(jsonData[i]['custom'].data[0])
+                //console.log(jsonData[i]['custom'].data[0].description)
 
-                console.log(jsonData[i])
-                console.log(jsonData[i].custom)
-                console.log(jsonData[i]['custom'].data[0])
-                console.log(jsonData[i]['custom'].data[0].description)
+
+                //Handle Custom Button functions
+
+                if (jsonData[i]['custom'].payload == "choose_category") {
+
+                    let buttons = [];
+
+                    for (j = 0; j < jsonData[i]['custom']['buttons'].length; j++) {
 
 
+                        buttons[j] = jsonData[i]['custom']['buttons'][j].title
+                    }
+
+
+
+                    renderCustomComponent(CustomButtonCard, {items: buttons});
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+                //Handle Custom Json messages
+                //Handle custom carrousel
                 for (j = 0; j < jsonData[i]['custom'].data.length; j++) {
-                    let items = [
-                        {
-                            "description": jsonData[i]['custom'].data[j].description,
-                            "src": jsonData[i]['custom'].data[j].image,
-                            "title": jsonData[i]['custom'].data[j].title,
-                            "button": jsonData[i]['custom'].data[j].buttons[0].title
-                        }
-                    ]
+
+
                 }
 
                 renderCustomComponent(CustomCarousel, {items: items})
