@@ -193,8 +193,10 @@ const Home = () => {
 
 
                 //Handle Custom Button functions
+                //TODO: Send reply in following syntax: "/keep_on_category" + '{"cat_ent"'':' + " " + '"' + i + '"' + "}}"
+                //TODO: f.e.: /keep_on_category{"cat_ent": "amerikanisch"}{"cat_ent": "spanisch"}...
 
-                if (jsonData[i]['custom'].payload == "choose_category") {
+                if (jsonData[i]['custom'].payload === "choose_category") {
 
                     let buttons = [];
 
