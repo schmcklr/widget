@@ -102,6 +102,7 @@ export default class CustomButtonCard extends Component {
 <ToggleButton />
 
                   {this.props.items.map(item => (<Button variant="outline-danger" className="buttons" onClick={ButtonClicked(item)} > {item} </Button>))}
+                  <Button variant="outline-danger" className="buttons" onClick={ButtonClicked("Weiter")} > Weiter </Button>
 
 
 
