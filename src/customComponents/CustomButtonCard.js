@@ -23,17 +23,18 @@ function ButtonClicked(item) {
     //addResponseMessage('Anbei findest du eine Zusammenfassung deiner Auswahl:')
     //renderCustomComponent(CustomCard, {item})
 
-    if (item != "Weiter") {
+    if (item !== "Weiter") {
 
         selectedItems[selectedItems.length] = item;
     } else {
-        responseText = '/keep_on_category';
+        responseText = '/keep_on_category{';
 
         for (i = 0; i < selectedItems.length; i++) {
 
             responseText += ('{"cat_ent": "' + selectedItems[i] + '"}');
 
         }
+        responseText += '}'
 
         addResponseMessage(responseText);
         handleMessagesAndResponses(responseText);
@@ -101,10 +102,10 @@ export default class CustomButtonCard extends Component {
                 </Card.Text>
 
 
-<ToggleButton />
 
-                  {this.props.items.map(item => (<Button variant="outline-danger" className="buttons" onClick={ButtonClicked(item)} > {item} </Button>))}
-                  <Button variant="outline-danger" className="buttons" onClick={ButtonClicked("Weiter")} > Weiter </Button>
+
+                  {this.props.items.map(item => (<Button variant="outline-danger" className="buttons" onClick={() => ButtonClicked(item)} > {item} </Button>))}
+                  <Button variant="outline-danger" className="buttons" onClick={() => ButtonClicked("Weiter")} > Weiter </Button>
 
 
 

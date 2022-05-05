@@ -164,7 +164,7 @@ const Home = () => {
         addResponseMessage("Hallo");
         addResponseMessage("Hallo was machst du gerade kann ich helfen");
         renderCustomComponent(CustomCarousel, {items: items2});
-       renderCustomComponent(CustomButtonCard, {items: testButtons["label"]});
+      // renderCustomComponent(CustomButtonCard, {items: testButtons["label"]});
         //renderCustomComponent(CustomCardGroup, {text: newMessage})
        // renderCustomComponent(CustomCard, {text: newMessage})
         //renderCustomComponent(CustomCarousel, {text: newMessage})
