@@ -6,7 +6,9 @@ import "./CustomButtonCard.scss";
 import {ClockHistory, House} from "react-bootstrap-icons";
 import {addResponseMessage, renderCustomComponent} from "react-chat-widget";
 import CustomCard from "./CustomCard";
-import {handleMessagesAndResponses} from "../pages/Home/Home";
+import {handleMessagesAndResponses} from "../MessagesAndResonses/MessagesAndResponses";
+
+
 
 
 let selectedItems = [];

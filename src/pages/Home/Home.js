@@ -32,7 +32,7 @@ const Home = () => {
     //******************************************************************
 
     // Used for submitting messages and getting responses
-    export function handleMessagesAndResponses(newMessage) {
+    function handleMessagesAndResponses(newMessage) {
 
         //********************POST*********************
         // POST request using fetch() (currently used for sending/receiving messages)
