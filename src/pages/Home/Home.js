@@ -32,7 +32,7 @@ const Home = () => {
     //******************************************************************
 
     // Used for submitting messages and getting responses
-    function handleMessagesAndResponses(newMessage) {
+    export function handleMessagesAndResponses(newMessage) {
 
         //********************POST*********************
         // POST request using fetch() (currently used for sending/receiving messages)
@@ -164,7 +164,7 @@ const Home = () => {
         addResponseMessage("Hallo");
         addResponseMessage("Hallo was machst du gerade kann ich helfen");
         renderCustomComponent(CustomCarousel, {items: items2});
-       // renderCustomComponent(CustomButtonCard, {items: items2});
+       renderCustomComponent(CustomButtonCard, {items: testButtons["label"]});
         //renderCustomComponent(CustomCardGroup, {text: newMessage})
        // renderCustomComponent(CustomCard, {text: newMessage})
         //renderCustomComponent(CustomCarousel, {text: newMessage})
@@ -646,3 +646,6 @@ const Home = () => {
 
 
 export default Home;
+
+export class handleMessagesAndResponses {
+}

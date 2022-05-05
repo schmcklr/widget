@@ -6,78 +6,70 @@ import "./CustomButtonCard.scss";
 import {ClockHistory, House} from "react-bootstrap-icons";
 import {addResponseMessage, renderCustomComponent} from "react-chat-widget";
 import CustomCard from "./CustomCard";
+import {handleMessagesAndResponses} from "../pages/Home/Home";
+
+
+let selectedItems = [];
 
 function ButtonClicked(item) {
+    let i;
+    let responseText;
     console.log(item.position)
 
-   // addResponseMessage('Vielen Dank für die Nutzung von Liefy!')
+
+    // addResponseMessage('Vielen Dank für die Nutzung von Liefy!')
     //addResponseMessage('Anbei findest du eine Zusammenfassung deiner Auswahl:')
     //renderCustomComponent(CustomCard, {item})
 
+    if (item != "Weiter") {
+
+        selectedItems[selectedItems.length] = item;
+    } else {
+        responseText = '/keep_on_category';
+
+        for (i = 0; i < selectedItems.length; i++) {
+
+            responseText += ('{"cat_ent": "' + selectedItems[i] + '"}');
+
+        }
+
+        addResponseMessage(responseText);
+        handleMessagesAndResponses(responseText);
+        selectedItems = [];
+    }
 }
 
-  function ToggleButtonExample(items) {
-      let i;
-      for (i = 0; i < items.length; i++) {
-          const [checked, setChecked] = useState(false);
 
-          return (
+function ToggleButtonExample() {
+  const [checked, setChecked] = useState(false);
+  const [radioValue, setRadioValue] = useState('1');
 
-              <>
-                  <ToggleButton
-                      className="mb-2"
-                      id="toggle-check"
-                      type="checkbox"
-                      variant="outline-primary"
-                      checked={checked}
-                      value="1"
-                      onChange={(e) => setChecked(e.currentTarget.checked)}
-                  >
-                      {i.title}
-                  </ToggleButton>
+  const radios = [
+    { name: 'Active', value: '1' },
+    { name: 'Radio', value: '2' },
+    { name: 'Radio', value: '3' },
+  ];
 
-              </>
-          );
-      }
-  }
+  return (
+    <>
+      <ToggleButton
+        className="mb-2"
+        id="toggle-check"
+        type="checkbox"
+        variant="outline-primary"
+        checked={checked}
+        value="1"
+        onChange={(e) => setChecked(e.currentTarget.checked)}
+      >
+        Checked
+      </ToggleButton>
+    </>
+  );
+}
+
+
 
 export default class CustomButtonCard extends Component {
-
- constructor(props) {
-    super(props);
-    this.state = {
-      colorUp: 'secondary',
-      colorDown:  'secondary',
-      clicked: false
-    };
-
-    this.handleUp = this.handleUp.bind(this);
-    this.handleDown = this.handleDown.bind(this);
-  }
-
-  handleUp(event) {
-  if (this.state.clicked === false) {
-    this.setState({
-      colorUp: 'success',
-      clicked: true
-    });
-   }
-  }
-
-  handleDown(event) {
-  if (this.state.clicked === false) {
-    this.setState({
-      colorDown: 'danger',
-      clicked: true
-    });
-    }
-  }
-
-
-
-
-
-
 
 
     render() {
@@ -107,9 +99,9 @@ export default class CustomButtonCard extends Component {
                 </Card.Text>
 
 
+<ToggleButton />
 
-
-                  {this.props.items.map(item => (<Button variant="outline-danger" className="buttons" > {item} </Button>))}
+                  {this.props.items.map(item => (<Button variant="outline-danger" className="buttons" onClick={ButtonClicked(item)} > {item} </Button>))}
 
 
 
