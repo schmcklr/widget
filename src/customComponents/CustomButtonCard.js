@@ -27,13 +27,13 @@ function ButtonClicked(item) {
 
         selectedItems[selectedItems.length] = item;
     } else {
-        responseText = '/keep_on_category{';
+        responseText = '/keep_on_category{{';
 
         for (i = 0; i < selectedItems.length; i++) {
 
             if (i < selectedItems.length - 1) {
 
-                responseText += ('"cat_ent": "' + selectedItems[i] + '",');
+                responseText += ('"cat_ent": "' + selectedItems[i] + '", ');
             } else {
                 responseText += ('"cat_ent": "' + selectedItems[i] + '"');
             }
@@ -43,7 +43,7 @@ function ButtonClicked(item) {
 
 
 
-        responseText += '}'
+        responseText += '}}'
 
         addUserMessage(responseText);
         handleMessagesAndResponses(responseText);
