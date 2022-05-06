@@ -33,9 +33,9 @@ function ButtonClicked(item) {
 
             if (i < selectedItems.length - 1) {
 
-                responseText += ('{"cat_ent": "' + selectedItems[i] + '"},');
+                responseText += ('"cat_ent": "' + selectedItems[i] + '",');
             } else {
-                responseText += ('{"cat_ent": "' + selectedItems[i] + '"}');
+                responseText += ('"cat_ent": "' + selectedItems[i] + '"');
             }
         }
 
