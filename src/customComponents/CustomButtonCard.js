@@ -27,23 +27,19 @@ function ButtonClicked(item) {
 
         selectedItems[selectedItems.length] = item;
     } else {
-        responseText = '/keep_on_category{{';
+        responseText = '/keep_on_category{"cat_ent":';
 
         for (i = 0; i < selectedItems.length; i++) {
 
             if (i < selectedItems.length - 1) {
 
-                responseText += ('"cat_ent": "' + selectedItems[i] + '", ');
+                responseText += ('"' + selectedItems[i] + '", ');
             } else {
-                responseText += ('"cat_ent": "' + selectedItems[i] + '"');
+                responseText += ('"' + selectedItems[i] + '"');
             }
         }
 
-
-
-
-
-        responseText += '}}'
+        responseText += '}'
 
         addUserMessage(responseText);
         handleMessagesAndResponses(responseText);
