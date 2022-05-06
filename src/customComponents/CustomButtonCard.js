@@ -27,7 +27,7 @@ function ButtonClicked(item) {
 
         selectedItems[selectedItems.length] = item;
     } else {
-        responseText = '/keep_on_category{"cat_ent":';
+        responseText = '/keep_on_category{"cat_ent": [';
 
         for (i = 0; i < selectedItems.length; i++) {
 
@@ -39,7 +39,7 @@ function ButtonClicked(item) {
             }
         }
 
-        responseText += '}'
+        responseText += ']}'
 
         addUserMessage(responseText);
         handleMessagesAndResponses(responseText);
