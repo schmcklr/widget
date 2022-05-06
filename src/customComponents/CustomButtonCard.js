@@ -27,7 +27,7 @@ function ButtonClicked(item) {
 
         selectedItems[selectedItems.length] = item;
     } else {
-        responseText = '/keep_on_category{{';
+        responseText = '/keep_on_category{';
 
         for (i = 0; i < selectedItems.length; i++) {
 
