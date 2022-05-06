@@ -4,7 +4,7 @@ import {Badge, Button, Card, ToggleButton,C} from "react-bootstrap";
 import "./cards.scss";
 import "./CustomButtonCard.scss";
 import {ClockHistory, House} from "react-bootstrap-icons";
-import {addResponseMessage, renderCustomComponent} from "react-chat-widget";
+import {addResponseMessage, addUserMessage, renderCustomComponent} from "react-chat-widget";
 import CustomCard from "./CustomCard";
 import {handleMessagesAndResponses} from "../MessagesAndResonses/MessagesAndResponses";
 
@@ -31,12 +31,21 @@ function ButtonClicked(item) {
 
         for (i = 0; i < selectedItems.length; i++) {
 
-            responseText += ('{"cat_ent": "' + selectedItems[i] + '"}');
+            if (i < selectedItems.length - 1) {
 
+                responseText += ('{"cat_ent": "' + selectedItems[i] + '"},');
+            } else {
+                responseText += ('{"cat_ent": "' + selectedItems[i] + '"}');
+            }
         }
+
+
+
+
+
         responseText += '}'
 
-        addResponseMessage(responseText);
+        addUserMessage(responseText);
         handleMessagesAndResponses(responseText);
         selectedItems = [];
     }
