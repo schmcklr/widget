@@ -8,6 +8,7 @@ import {addResponseMessage, addUserMessage, renderCustomComponent} from "react-c
 import CustomCard from "./CustomCard";
 import {handleMessagesAndResponses} from "../MessagesAndResonses/MessagesAndResponses";
 import {ToggleButtonExample} from "./Button";
+import button from "bootstrap/js/src/button";
 
 
 
@@ -15,6 +16,7 @@ import {ToggleButtonExample} from "./Button";
 let selectedItems = [];
 
 function ButtonClicked(data, metaData) {
+
     let i;
 
     let responseText;
@@ -78,8 +80,8 @@ export default class CustomButtonCard extends Component {
                 </Card.Text>
                 <Card.Text className="cardBadgeContainer">
 
-                    {this.props.items.map(item => (<Button variant="outline-danger" className="buttons"
-                                                           onClick={() => ButtonClicked(item)}> {item} </Button>))}
+                    {this.props.items.map(item => (<Button id={item} variant="outline-danger" className="buttons"
+                                                           onClick={() => ButtonClicked(item)} > {item} </Button>))}
                     <Button variant="outline-danger" className="closedButtons"
                             onClick={() => ButtonClicked("closed", this.props.metaData[0].intent)}> Weiter </Button>
 
