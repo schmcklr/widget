@@ -77,86 +77,6 @@ const Home = () => {
     }
 
 
-
-    //TODO: REMOVE
-
-    let testButtons = [{
-                label: 'Test',
-                value: 'Test',
-            },
-    {
-                label: 'Deutsch',
-                value: 'Test',
-            },{
-                label: 'Amerikanisch',
-                value: 'Test',
-            },{
-                label: 'Bayrisch',
-                value: 'Test',
-            },{
-                label: 'Nichts',
-                value: 'Test',
-            },{
-                label: 'Alles',
-                value: 'Test',
-            },{
-                label: 'Test',
-                value: 'Test',
-            },{
-                label: 'Test',
-                value: 'Test',
-            },{
-                label: 'Test',
-                value: 'Test',
-            },{
-                label: 'Test',
-                value: 'Test',
-            },{
-                label: 'Test',
-                value: 'Test',
-            }];
-
-    setQuickButtons(testButtons);
-
-
-
-
-    let items2 = [
-        {
-            'title': 'Schnitzel Wiener Art',
-            'categorie': 'bayerisch',
-            'price': '13,80 €',
-            'describtion': 'Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und Preiselbeeren, mit gebackenen Kartoffelstaberln',
-            'src': 'https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s=',
-            'button': 'Wählen',
-            'restaurant': 'Hans im Glück',
-            'position': '1'
-        },
-        {
-            'title': 'Knusper-Wels',
-            'categorie': 'bayerisch',
-            'price': '13,80 €',
-            'describtion': 'Im Sesam-Knuspermantel gebackenen Filets vom Wels, mit Zitronenschnitz, Remouladensoße  und gebackenen Kartoffelstaberln',
-            'src': 'https://pbs.twimg.com/media/CyhKCHwXcAAatJw?format=jpg&name=small',
-            'button': 'Wählen',
-            'restaurant': 'Namaste',
-            'position': '2'
-
-        },
-        {
-            'title': 'goodbye',
-            'categorie': 'bayerisch',
-            'price': '13,80 €',
-            'describtion': 'Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit Zitronenschnitz und Preiselbeeren, mit gebackenen Kartoffelstaberln',
-            'src': 'https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s=',
-            'button': 'Wählen',
-            'restaurant': 'Kfc',
-            'position': '3'
-        },
-
-    ]
-
-
     // handle user Message typed in via keyboard
     const handleNewUserMessage = (newMessage) => {
         handleMessagesAndResponses(newMessage)
@@ -165,7 +85,7 @@ const Home = () => {
         //renderCustomComponent(CustomCard, {text: newMessage})
         addResponseMessage("Hallo");
         addResponseMessage("Hallo was machst du gerade kann ich helfen");
-        renderCustomComponent(CustomCarousel, {items: items2});
+       // renderCustomComponent(CustomCarousel, {items: items2});
         //renderCustomComponent(Test, {items: items2});
        // renderCustomComponent(ToggleButtonExample, {items: testButtons})
        // renderCustomComponent(CustomCard, {text: newMessage})

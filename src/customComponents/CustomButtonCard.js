@@ -78,6 +78,10 @@ export default class CustomButtonCard extends Component {
                 </Card.Text>
                 <Card.Text className="cardBadgeContainer">
 
+                    {this.props.items.map(item => (<Button variant="outline-danger" className="buttons"
+                                                           onClick={() => ButtonClicked(item)}> {item} </Button>))}
+                    <Button variant="outline-danger" className="closedButtons"
+                            onClick={() => ButtonClicked("closed", this.props.metaData[0].intent)}> Weiter </Button>
 
 
                 </Card.Text>
@@ -85,8 +89,6 @@ export default class CustomButtonCard extends Component {
 
 
 
-                  {this.props.items.map(item => (<Button variant="outline-danger" className="buttons" onClick={() => ButtonClicked(item)} > {item} </Button>))}
-                  <Button variant="outline-danger" className="buttons" onClick={() => ButtonClicked("closed", this.props.metaData[0].intent)} > Weiter </Button>
 
 
 
