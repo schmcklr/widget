@@ -167,7 +167,7 @@ const Home = () => {
         addResponseMessage("Hallo was machst du gerade kann ich helfen");
         renderCustomComponent(CustomCarousel, {items: items2});
         //renderCustomComponent(Test, {items: items2});
-        renderCustomComponent(ToggleButtonExample, {items: testButtons})
+       // renderCustomComponent(ToggleButtonExample, {items: testButtons})
        // renderCustomComponent(CustomCard, {text: newMessage})
        // renderCustomComponent(TestTest, {text: newMessage})
     }
@@ -200,26 +200,26 @@ const Home = () => {
                 //check which component to render
                 if (jsonData[i]['custom'].payload.match(/choose.*/)) {
 
-                    let buttons = [];
+                    let items = [];
                     let metaData = [];
 
                     for (j = 0; j < jsonData[i]['custom']['buttons'].length; j++) {
 
+                        items[j] = jsonData[i]['custom']['buttons'][j].title;
 
-                        buttons[j] = jsonData[i]['custom']['buttons'][j].title
                     }
 
 
                     metaData = [{
                         badge: jsonData[i]['custom']['meta_data'].Badge,
                         intent: jsonData[i]['custom']['meta_data'].intent,
-                        subtitle: jsonData[i]['custom']['meta_data']['subtitle'],
-                        title: jsonData[i]['custom']['meta_data']['title']
+                        subtitle: jsonData[i]['custom']['meta_data'].subtitle,
+                        title: jsonData[i]['custom']['meta_data'].title
                     }];
 
 
 
-                    renderCustomComponent(CustomButtonCard, {items: buttons, metaData: metaData});
+                    renderCustomComponent(CustomButtonCard, {items: items, metaData: metaData});
 
 
                 }

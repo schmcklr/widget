@@ -14,21 +14,22 @@ import {ToggleButtonExample} from "./Button";
 
 let selectedItems = [];
 
-function ButtonClicked(item) {
+function ButtonClicked(data, metaData) {
     let i;
+
     let responseText;
-    console.log(item.position)
+    //console.log(item.position)
 
 
     // addResponseMessage('Vielen Dank für die Nutzung von Liefy!')
     //addResponseMessage('Anbei findest du eine Zusammenfassung deiner Auswahl:')
     //renderCustomComponent(CustomCard, {item})
 
-    if (item !== "Weiter") {
+    if (data !== "closed") {
 
-        selectedItems[selectedItems.length] = item;
+        selectedItems[selectedItems.length] = data;
     } else {
-        responseText = '/keep_on_category{"cat_ent": [';
+        responseText = metaData + '[';
 
         for (i = 0; i < selectedItems.length; i++) {
 
@@ -49,8 +50,10 @@ function ButtonClicked(item) {
 }
 
 
-
 export default class CustomButtonCard extends Component {
+
+
+
 
 
     render() {
@@ -63,13 +66,13 @@ export default class CustomButtonCard extends Component {
 
 
             <Card.Body>
-                <Card.Title className="buttonCardTitleBig"> <Badge className="buttonCardBadgeTitle" pill>{this.props.metaData.badge}</Badge> Wähle deine Kategorie</Card.Title>
+                <Card.Title className="buttonCardTitleBig"> <Badge className="buttonCardBadgeTitle" pill>{this.props.metaData[0].badge}</Badge>{' '}{this.props.metaData[0].title}</Card.Title>
                 <Card.Subtitle className="cardSubTitle"></Card.Subtitle>
                 <Card.Text className="cardText">
 
                 </Card.Text>
                 <Card.Title className="cardTitle"></Card.Title>
-                <Card.Subtitle className="cardSubTitle">Wähle bis zu 3 Richtung aus</Card.Subtitle>
+                <Card.Subtitle className="cardSubTitle">{this.props.metaData[0].subtitle}</Card.Subtitle>
                 <Card.Text className="cardText">
 
                 </Card.Text>
@@ -83,7 +86,7 @@ export default class CustomButtonCard extends Component {
 
 
                   {this.props.items.map(item => (<Button variant="outline-danger" className="buttons" onClick={() => ButtonClicked(item)} > {item} </Button>))}
-                  <Button variant="outline-danger" className="buttons" onClick={() => ButtonClicked("Weiter")} > Weiter </Button>
+                  <Button variant="outline-danger" className="buttons" onClick={() => ButtonClicked("closed", this.props.metaData[0].intent)} > Weiter </Button>
 
 
 
