@@ -63,7 +63,7 @@ export default class CustomButtonCard extends Component {
 
 
             <Card.Body>
-                <Card.Title className="buttonCardTitleBig"> <Badge className="buttonCardBadgeTitle" pill>Schritt 1:</Badge> Wähle deine Kategorie</Card.Title>
+                <Card.Title className="buttonCardTitleBig"> <Badge className="buttonCardBadgeTitle" pill>{this.props.metaData['Badge']}</Badge> Wähle deine Kategorie</Card.Title>
                 <Card.Subtitle className="cardSubTitle"></Card.Subtitle>
                 <Card.Text className="cardText">
 

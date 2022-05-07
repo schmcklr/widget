@@ -201,6 +201,7 @@ const Home = () => {
                 if (jsonData[i]['custom'].payload.match(/choose.*/)) {
 
                     let buttons = [];
+                    let metaData = [];
 
                     for (j = 0; j < jsonData[i]['custom']['buttons'].length; j++) {
 
@@ -209,8 +210,16 @@ const Home = () => {
                     }
 
 
+                    metaData = [{
+                        badge: jsonData[i]['custom']['meta_data']['Badge'],
+                        intent: jsonData[i]['custom']['meta_data']['intent'],
+                        subtitle: jsonData[i]['custom']['meta_data']['subtitle'],
+                        title: jsonData[i]['custom']['meta_data']['title']
+                    }];
 
-                    renderCustomComponent(CustomButtonCard, {items: buttons});
+
+
+                    renderCustomComponent(CustomButtonCard, {items: buttons, metaData: metaData});
 
 
                 }
