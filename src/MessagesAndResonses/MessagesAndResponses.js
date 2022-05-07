@@ -6,6 +6,8 @@ import {addResponseMessage, addUserMessage, renderCustomComponent, setQuickButto
 import CustomCarousel from "../customComponents/CustomCarousel";
 import CustomButtonCard from "../customComponents/CustomButtonCard";
 import CustomImage from "../customComponents/CustomImage";
+import {useState} from "react";
+import {ToggleButton} from "react-bootstrap";
 
 export function handleMessagesAndResponses(newMessage) {
 
@@ -198,3 +200,4 @@ export function handleMessagesAndResponses(newMessage) {
         console.log(jsonData)
         renderCustomComponent(CustomImage, {src: jsonData})
     }
+

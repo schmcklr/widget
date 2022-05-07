@@ -7,6 +7,7 @@ import {ClockHistory, House} from "react-bootstrap-icons";
 import {addResponseMessage, addUserMessage, renderCustomComponent} from "react-chat-widget";
 import CustomCard from "./CustomCard";
 import {handleMessagesAndResponses} from "../MessagesAndResonses/MessagesAndResponses";
+import {ToggleButtonExample} from "./Button";
 
 
 
@@ -45,34 +46,6 @@ function ButtonClicked(item) {
         handleMessagesAndResponses(responseText);
         selectedItems = [];
     }
-}
-
-
-function ToggleButtonExample() {
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState('1');
-
-  const radios = [
-    { name: 'Active', value: '1' },
-    { name: 'Radio', value: '2' },
-    { name: 'Radio', value: '3' },
-  ];
-
-  return (
-    <>
-      <ToggleButton
-        className="mb-2"
-        id="toggle-check"
-        type="checkbox"
-        variant="outline-primary"
-        checked={checked}
-        value="1"
-        onChange={(e) => setChecked(e.currentTarget.checked)}
-      >
-        Checked
-      </ToggleButton>
-    </>
-  );
 }
 
 

@@ -20,6 +20,8 @@ import CustomImage from "../../customComponents/CustomImage";
 import {Accordion, Badge, Button, Card, Col, Container, ListGroup, Placeholder, Row} from "react-bootstrap";
 import {ClockHistory, House} from "react-bootstrap-icons";
 import CustomButtonCard from "../../customComponents/CustomButtonCard";
+import Test from "../../customComponents/Test";
+import {ResumeTypes, TestTest, ToggleButtonExample} from "../../customComponents/Button";
 
 
 //TODO: Restructure Code maybe in seperate files and not all function in the home.js (Norman)
@@ -164,10 +166,10 @@ const Home = () => {
         addResponseMessage("Hallo");
         addResponseMessage("Hallo was machst du gerade kann ich helfen");
         renderCustomComponent(CustomCarousel, {items: items2});
-      // renderCustomComponent(CustomButtonCard, {items: testButtons["label"]});
-        //renderCustomComponent(CustomCardGroup, {text: newMessage})
+        //renderCustomComponent(Test, {items: items2});
+        renderCustomComponent(ToggleButtonExample, {items: testButtons})
        // renderCustomComponent(CustomCard, {text: newMessage})
-        //renderCustomComponent(CustomCarousel, {text: newMessage})
+       // renderCustomComponent(TestTest, {text: newMessage})
     }
 
 
