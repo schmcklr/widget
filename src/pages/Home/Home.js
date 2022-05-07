@@ -211,8 +211,8 @@ const Home = () => {
 
 
                     metaData = [{
-                        badge: jsonData[i]['custom']['meta_data']['Badge'],
-                        intent: jsonData[i]['custom']['meta_data']['intent'],
+                        badge: jsonData[i]['custom']['meta_data'].Badge,
+                        intent: jsonData[i]['custom']['meta_data'].intent,
                         subtitle: jsonData[i]['custom']['meta_data']['subtitle'],
                         title: jsonData[i]['custom']['meta_data']['title']
                     }];
