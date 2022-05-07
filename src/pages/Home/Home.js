@@ -210,7 +210,7 @@ const Home = () => {
 
 
 
-                    renderCustomComponent(CustomButtonCard, {items: jsonData[i]['custom']['buttons']});
+                    renderCustomComponent(CustomButtonCard, {items: buttons});
 
 
                 }
