@@ -80,6 +80,7 @@ export function handleMessagesAndResponses(newMessage) {
 
             //buttons
             if (jsonData[i].hasOwnProperty('custom')) {
+                setQuickButtons([]);
 
                 //console.log(jsonData[i])
                 //console.log(jsonData[i].custom)
@@ -126,7 +127,7 @@ export function handleMessagesAndResponses(newMessage) {
 
 
 
-
+                else{
 
 
                 //Handle Custom Json messages
@@ -145,7 +146,7 @@ export function handleMessagesAndResponses(newMessage) {
                         button: jsonData[i]['custom'].data[0].buttons[0].title})
 
                  */
-                }
+                }}
                // renderCustomComponent(CustomCarousel, {text: jsonData[i] })
                 //console.log(jsonData[i])
                 //handleButtons(jsonData[i].buttons)
@@ -192,20 +193,6 @@ export function handleMessagesAndResponses(newMessage) {
     }
 
 
-
-
-
-
-
-    // function that is triggerd if a button is clicked
-    const handleQuickButtonClicked = (value) => {
-        addUserMessage(value)
-        console.log(value)
-        handleMessagesAndResponses(value)
-
-        //TODO: removes all buttons, in some cases that should not be the case because mor options can be selected, how can we identify?
-        //setQuickButtons([]);
-    }
 
     // handle bot response Images
     export function handleImages(jsonData) {
