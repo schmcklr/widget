@@ -197,8 +197,8 @@ const Home = () => {
                 //Handle Custom Button functions
                 //TODO: Send reply in following syntax: "/keep_on_category" + '{"cat_ent"'':' + " " + '"' + i + '"' + "}}"
                 //TODO: f.e.: /keep_on_category{"cat_ent": "amerikanisch"}{"cat_ent": "spanisch"}...
-
-                if (jsonData[i]['custom'].payload === "choose_category") {
+                //check which component to render
+                if (jsonData[i]['custom'].payload.match(/choose.*/)) {
 
                     let buttons = [];
 
@@ -210,7 +210,7 @@ const Home = () => {
 
 
 
-                    renderCustomComponent(CustomButtonCard, {items: buttons});
+                    renderCustomComponent(CustomButtonCard, {items: jsonData[i]['custom']['buttons']});
 
 
                 }
