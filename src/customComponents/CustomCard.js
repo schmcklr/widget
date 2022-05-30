@@ -1,9 +1,9 @@
-//needed to render pictures
 import {Component} from "react";
 import {Badge, Button, Card} from "react-bootstrap";
 import "./cards.scss";
 import {ClockHistory, House} from "react-bootstrap-icons";
 
+//Custom Card, used for Summary of selection
 export default class CustomCard extends Component {
     render() {
         return (<Card className="customCardEnd" style={{width: '18rem'}}>
@@ -11,7 +11,6 @@ export default class CustomCard extends Component {
                 <Card.Title className="cardTitleBig">Zusammenfassung</Card.Title>
                 <Card.Subtitle className="cardSubTitle"></Card.Subtitle>
                 <Card.Text className="cardText">
-
                 </Card.Text>
                 <Card.Title className="cardTitle">{this.props.item.title} <Badge className="badgeTitle"
                                                                                  pill>#{this.props.item.position}</Badge></Card.Title>
@@ -21,12 +20,11 @@ export default class CustomCard extends Component {
                     {this.props.item.describtion}
                 </Card.Text>
                 <Card.Text className="cardBadgeContainer">
-
                     <Badge className="cardBadge" bg="secondary">{this.props.item.categorie}</Badge>{' '}
                     <Badge className="cardBadge" bg="secondary">Preis: {this.props.item.price}</Badge>
                     <Button href="https://hansimglueck-burgergrill.de/" variant="outline-danger" id="cardButton"
                             className="cardButtonRestaurant">Hans im Glück</Button>
-                     <Button href="https://www.lieferando.de/" variant="outline-danger" id="cardButton"
+                    <Button href="https://www.lieferando.de/" variant="outline-danger" id="cardButton"
                             className="cardButtonLieferando">Lieferando.de</Button>
                     <Card.Title className="cardBottom">Liefy wünscht Buon Appetito!</Card.Title>
                 </Card.Text>
