@@ -1,0 +1,192 @@
+.customCard{
+
+ //background-color: #F8F8F8;
+  border-radius: 10px;
+}
+
+.cardTitle{
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.cardSubTitle{
+  font-size: 11px;
+  margin-bottom: 8px;
+  color: gray;
+  vertical-align: middle;
+
+}
+
+.cardText{
+  font-size: 11px;
+  margin-bottom: 2px;
+
+}
+
+.cardImage{
+  border-radius: 10px;
+  object-fit: cover;
+  height: 155px;
+}
+
+.cardButton{
+
+  font-size: 12px;
+  width: 100%;
+  color: rgba(174,0,0,0.9);
+  border-color: rgba(174,0,0,0.9);
+
+}
+
+.cardButton:hover{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+.cardButton:focus{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+
+
+.cardBadgeContainer{
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.cardBadge{
+  font-size: 10.5px;
+  margin-top: 0px;
+  width: 48%;
+
+}
+
+.carousel {
+  margin: 1.5rem;
+
+}
+.carousel-inner {
+
+}
+
+.carousel-control-prev {
+ margin-left: -30px;
+  margin-top: 190px;
+  //background-color: gray;
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.carousel-control-next {
+  margin-right: -30px;
+  margin-top: 190px;
+  //background-color: gray;
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.icon{
+  vertical-align: text-bottom;
+}
+
+
+
+.badgeTitle{
+  background-color: #ddca63 !important;
+  color: white;
+  font-size: 11px;
+  vertical-align: text-top;
+}
+
+.cardImageSmall{
+  border-radius: 10px;
+  object-fit: cover;
+  height: 155px;
+  margin-bottom: 10px;
+  margin-right: -880px;
+}
+
+.cardSelect{
+  margin: 0px;
+  width: 10px;
+  height: 20px;
+}
+
+.cardTitleBig{
+  font-size: 1.8em;
+  margin-bottom: 11px;
+  color: rgba(174,0,0,0.9);
+}
+
+.cardBottom{
+
+  margin-top: 25px;
+  font-family: "Apple SD Gothic Neo";
+  font-weight: normal;
+  font-size: 17px;
+}
+
+.websiteCustomCard{
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.customCardEnd{
+    margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+.cardButtonLieferando{
+  font-size: 12px;
+  width: 100%;
+  color: #ff7f00;
+  border-color: #ff7f00;
+  margin-top: 10px;
+}
+
+
+.cardButtonLieferando:hover{
+  font-size: 12px;
+  color: white;
+  border-color: #ff7f00;
+  background-color: #ff7f00;
+}
+.cardButtonLieferando:focus{
+  font-size: 12px;
+  color: white;
+  border-color: #ff7f00;
+  background-color: #ff7f00;
+}
+
+.cardButtonRestaurant{
+  font-size: 12px;
+  width: 100%;
+  color: gray;
+  border-color: gray;
+  margin-top: 10px;
+}
+
+
+.cardButtonRestaurant:hover{
+  font-size: 12px;
+  color: white;
+  border-color: gray;
+  background-color: gray;
+}
+.cardButtonRestaurant:focus{
+  font-size: 12px;
+  color: white;
+  border-color: gray;
+  background-color: gray;
+}
+

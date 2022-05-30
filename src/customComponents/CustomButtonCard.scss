@@ -1,0 +1,96 @@
+.buttons{
+
+  font-size: 12px;
+  width: 47%;
+  color: rgba(174,0,0,0.9);
+  border-color: rgba(174,0,0,0.9);
+  align-items: center;
+  text-align: center;
+  margin-bottom: 7px;
+  margin-left: 2px;
+ margin-right: 2px;
+
+}
+
+.buttons:hover{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+.buttons:focus{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
+}
+.buttons:active{
+  font-size: 12px;
+  color: white;
+  border-color: rgba(174,0,0,0.9) !important;
+  background-color: rgba(174,0,0,0.9) !important;
+}
+
+.buttons:disabled{
+  font-size: 12px;
+  color: white;
+  border-color: gray;
+  background-color: gray !important;
+}
+
+.closedButtons{
+
+  font-size: 12px;
+  width: 96%;
+  color: #00A86B;
+  border-color: #00A86B;
+  align-items: center;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  margin-left: 2px;
+  margin-right: 2px;
+
+}
+
+.closedButtons:hover{
+  font-size: 12px;
+  color: white;
+  border-color: #00A86B;
+  background-color: #00A86B;
+
+
+}
+.closedButtons:focus{
+  font-size: 12px;
+  color: white;
+  border-color: #00A86B;
+  background-color: #00A86B;
+}
+.closedButtons:active{
+  font-size: 12px;
+  color: white;
+  border-color: #00A86B !important;
+  background-color: #00A86B !important;
+}
+
+
+
+
+
+.buttonCardTitleBig{
+  font-size: 1.15em;
+  margin-bottom: 11px;
+  color: black;
+}
+
+.buttonCardBadgeTitle{
+  background-color: #ddca63 !important;
+  color: white;
+  font-size: 12px;
+  vertical-align: text-top;
+  margin-top: 2px;
+
+
+
+}

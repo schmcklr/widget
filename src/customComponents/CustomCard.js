@@ -1,19 +1,35 @@
 //needed to render pictures
 import {Component} from "react";
-import {Card} from "react-bootstrap";
+import {Badge, Button, Card} from "react-bootstrap";
+import "./cards.scss";
+import {ClockHistory, House} from "react-bootstrap-icons";
 
 export default class CustomCard extends Component {
     render() {
-        return (<Card style={{width: '18rem'}}>
+        return (<Card className="customCardEnd" style={{width: '18rem'}}>
             <Card.Body>
-                <Card.Title>{this.props.text}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                <Card.Title className="cardTitleBig">Zusammenfassung</Card.Title>
+                <Card.Subtitle className="cardSubTitle"></Card.Subtitle>
+                <Card.Text className="cardText">
+
                 </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
+                <Card.Title className="cardTitle">{this.props.item.title} <Badge className="badgeTitle"
+                                                                                 pill>#{this.props.item.position}</Badge></Card.Title>
+                <Card.Subtitle className="cardSubTitle"><House className="icon"/> {this.props.item.restaurant}{' '}
+                    <ClockHistory className="icon"/> 30 min</Card.Subtitle>
+                <Card.Text className="cardText">
+                    {this.props.item.describtion}
+                </Card.Text>
+                <Card.Text className="cardBadgeContainer">
+
+                    <Badge className="cardBadge" bg="secondary">{this.props.item.categorie}</Badge>{' '}
+                    <Badge className="cardBadge" bg="secondary">Preis: {this.props.item.price}</Badge>
+                    <Button href="https://hansimglueck-burgergrill.de/" variant="outline-danger" id="cardButton"
+                            className="cardButtonRestaurant">Hans im Glück</Button>
+                     <Button href="https://www.lieferando.de/" variant="outline-danger" id="cardButton"
+                            className="cardButtonLieferando">Lieferando.de</Button>
+                    <Card.Title className="cardBottom">Liefy wünscht Buon Appetito!</Card.Title>
+                </Card.Text>
             </Card.Body>
         </Card>)
     }

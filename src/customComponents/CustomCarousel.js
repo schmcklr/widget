@@ -1,62 +1,54 @@
-import {Component} from "react";
-import {Button, Card, Carousel} from "react-bootstrap";
+import {Component, useEffect, useState} from "react";
+import {Badge, Button, Card, Carousel, Dropdown, DropdownButton, Form, ListGroup, Row} from "react-bootstrap";
 
+
+import "./cards.scss";
+
+
+import {ArrowRight, House, } from 'react-bootstrap-icons';
+import {ClockHistory} from "react-bootstrap-icons";
+import {addResponseMessage, addUserMessage, renderCustomComponent} from "react-chat-widget";
+import CustomCard from "./CustomCard";
+
+
+
+//handleButtonClicked
+function handleButtonClicked(item) {
+    console.log(item.position)
+    addResponseMessage('Vielen Dank für die Nutzung von Liefy!')
+    addResponseMessage('Anbei findest du eine Zusammenfassung deiner Auswahl:')
+    renderCustomComponent(CustomCard, {item})
+}
 
 export default class CustomCarousel extends Component {
+
+
     render() {
-        return (<Carousel id="myCarousel" variant="dark" indicators={false} slide={false}>
-            <Carousel.Item>
-                <Card style={{width: '15rem'}}>
-                    <Card.Img variant="top"
-                              src={this.props.src} />
-                    <Card.Body>
-                        <Card.Title>{this.props.title}</Card.Title>
-                        <Card.Text>
-                            {this.props.description}
-                        </Card.Text>
-                        <Button variant="outline-danger">Wählen</Button>{' '}
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Powered by Liefy</small>
-                    </Card.Footer>
-                </Card>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Card style={{width: '15rem'}}>
-                    <Card.Img variant="top"
-                              src="https://medien.bremen.de/media/464/288/italienisch-essen-bruschetta-quelle--beats-.jpg"/>
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
-                </Card>
+        return (<Carousel className="customCarousel" interval={null} variant="dark" indicators={false} slide={false}>
+            {this.props.items.map(item => (<Carousel.Item>
+                    <Card style={{width: '15rem'}} className="customCard">
+                        <Card.Img variant="top" className="cardImage"
+                                  src={item.src} />
+                        <Card.Body>
+                            <Card.Title className="cardTitle">{item.title} <Badge className="badgeTitle"
+                                                                                  pill>#{item.position}</Badge></Card.Title>
+                            <Card.Subtitle className="cardSubTitle"><House className="icon"/> {item.restaurant}{' '}
+                                <ClockHistory className="icon"/> 30 min</Card.Subtitle>
+                            <Card.Text className="cardText">
+                                {item.describtion}
+                            </Card.Text>
+                            <Card.Text className="cardBadgeContainer">
+                                <Badge className="cardBadge" bg="secondary">{item.categorie}</Badge>{' '}
+                                <Badge className="cardBadge" bg="secondary">Preis: {item.price}</Badge>
+                            </Card.Text>
+                            <Button variant="outline-danger" id="cardButton" className="cardButton"
+                                    onClick={() => handleButtonClicked(item)}>{item.button}</Button>
 
-            </Carousel.Item>
-            <Carousel.Item>
-                <Card style={{width: '15rem'}}>
-                    <Card.Img variant="top"
-                              src="https://media.istockphoto.com/photos/arabic-and-middle-eastern-dinner-table-hummus-tabbouleh-salad-salad-picture-id1175505781?k=20&m=1175505781&s=612x612&w=0&h=STomby2lCtcvpl_hxK6RhknQQWrkvpkHcoDLD4zttFk="/>
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                    </Card.Footer>
-                </Card>
-            </Carousel.Item>
+                        </Card.Body>
+                    </Card>
+                </Carousel.Item>
+            ))}
         </Carousel>)
-
     }
 
 }
-
