@@ -77,7 +77,7 @@ export function handleMessagesAndResponses(newMessage) {
             if (jsonData[i].hasOwnProperty('custom')) {
                 setQuickButtons([]);
 
-                //console.log(jsonData[i])
+                console.log(jsonData[i])
                 //console.log(jsonData[i].custom)
                 //console.log(jsonData[i]['custom'].data[0])
                 //console.log(jsonData[i]['custom'].data[0].description)
@@ -102,6 +102,9 @@ export function handleMessagesAndResponses(newMessage) {
                     renderCustomComponent(CustomButtonCard, {items: items, metaData: metaData});
                 }
                 else if (jsonData[i]['custom'].payload.match(/dishes_selection.*/)) {
+                    let dishes = [];
+
+
 
                 //checks if message is from type "carousel"
                 for (j = 0; j < jsonData[i]['custom'].data.length; j++) {
