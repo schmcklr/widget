@@ -23,7 +23,7 @@ export default class CustomCard extends Component {
                     <Badge className="cardBadge" bg="secondary">{this.props.item.category}</Badge>{' '}
                     <Badge className="cardBadge" bg="secondary">Preis: {this.props.item.price} €</Badge>
                     <Button href="https://hansimglueck-burgergrill.de/" variant="outline-danger" id="cardButton"
-                            className="cardButtonRestaurant">Hans im Glück</Button>
+                            className="cardButtonRestaurant">{this.props.item.restaurant}</Button>
                     <Button href="https://www.lieferando.de/" variant="outline-danger" id="cardButton"
                             className="cardButtonLieferando">Lieferando.de</Button>
                     <Card.Title className="cardBottom">Liefy wünscht Buon Appetito!</Card.Title>

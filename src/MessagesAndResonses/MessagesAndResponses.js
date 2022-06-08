@@ -115,6 +115,7 @@ export function handleMessagesAndResponses(newMessage) {
                             image: jsonData[i]['custom']['data'][j].picture,
                             category: jsonData[i]['custom']['data'][j].orientation,
                             price: jsonData[i]['custom']['data'][j].price,
+                            vegLabel: jsonData[i]['custom']['data'][j].veg_label,
                             restaurant: jsonData[i]['custom']['data'][j].restaurant_id,
                             button: "Wählen",
                             position: j

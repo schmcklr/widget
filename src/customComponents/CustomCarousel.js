@@ -27,7 +27,7 @@ export default class CustomCarousel extends Component {
                             <Card.Title className="cardTitle">{item.title} <Badge className="badgeTitle"
                                                                                   pill>#{item.position}</Badge></Card.Title>
                             <Card.Subtitle className="cardSubTitle"><House className="icon"/> {item.restaurant}{' '}
-                                <ClockHistory className="icon"/> 30 min</Card.Subtitle>
+                                <ClockHistory className="icon"/> 30 min{' '}{item.vegLabel}</Card.Subtitle>
                             <Card.Text className="cardText">
                                 {item.subtitle}
                             </Card.Text>
