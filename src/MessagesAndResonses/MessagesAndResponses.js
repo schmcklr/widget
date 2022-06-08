@@ -108,8 +108,20 @@ export function handleMessagesAndResponses(newMessage) {
 
                 //checks if message is from type "carousel"
                 for (j = 0; j < jsonData[i]['custom'].data.length; j++) {
+                    dishes [j] = [
+                        {
+                            title: jsonData[i]['custom']['data'][j].title,
+                            subtitle: jsonData[i]['custom']['data'][j].subtitle,
+                            image: jsonData[i]['custom']['data'][j].picture,
+                            category: jsonData[i]['custom']['data'][j].orientation,
+                            price: jsonData[i]['custom']['data'][j].price,
+                            restaurant: jsonData[i]['custom']['data'][j].restaurant_id,
+                            position: j
+                        }
+
+                    ];
                 }
-                renderCustomComponent(CustomCarousel, {items: items})
+                renderCustomComponent(CustomCarousel, {dishes: dishes})
 
                 /*
                     renderCustomComponent(CustomCarousel, {description: jsonData[i]['custom'].data[0].description,
