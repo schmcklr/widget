@@ -17,11 +17,11 @@ export default class CustomCard extends Component {
                 <Card.Subtitle className="cardSubTitle"><House className="icon"/> {this.props.item.restaurant}{' '}
                     <ClockHistory className="icon"/> 30 min</Card.Subtitle>
                 <Card.Text className="cardText">
-                    {this.props.item.describtion}
+                    {this.props.item.subtitle}
                 </Card.Text>
                 <Card.Text className="cardBadgeContainer">
-                    <Badge className="cardBadge" bg="secondary">{this.props.item.categorie}</Badge>{' '}
-                    <Badge className="cardBadge" bg="secondary">Preis: {this.props.item.price}</Badge>
+                    <Badge className="cardBadge" bg="secondary">{this.props.item.category}</Badge>{' '}
+                    <Badge className="cardBadge" bg="secondary">Preis: {this.props.item.price} €</Badge>
                     <Button href="https://hansimglueck-burgergrill.de/" variant="outline-danger" id="cardButton"
                             className="cardButtonRestaurant">Hans im Glück</Button>
                     <Button href="https://www.lieferando.de/" variant="outline-danger" id="cardButton"
