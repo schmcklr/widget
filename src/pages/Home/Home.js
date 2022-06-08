@@ -67,11 +67,10 @@ const Home = () => {
                     <Row>
                             <h2 >Wie funktioniert Liefy?</h2>
                             <hr/>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam blanditiis cum
-                                debitis
-                                facilis ipsum magnam praesentium qui quo ratione soluta tempora ullam, unde vero
-                                voluptatibus. Alias
-                                enim placeat quisquam.</p>
+                            <p>Du bist dir unschlüssig was du gerne essen möchtest und hast weder Zeit noch Lust lange durch zahlreiche Gerichte zu stöbern? Dann ist Liefy wie für dich gemacht!
+Öffne das Chat Widget in der rechten unteren Ecke und beginne eine Unterhaltung. Unsere Liefy wird dich Schritt für Schritt in einem interaktiven Dialog zu deinem Wunschgericht führen! Alles was du dafür tun musst, ist, Liefy deine Lieblingszutaten und Präferenzen zu verraten. Sie wird dir schließlich eine individuelle Auswahl an idealen Gerichten für dich vorschlagen, und das ganz schnell und einfach.
+Also, lass deinen Magen nicht knurren - Liefy wartet schon auf dich!
+</p>
 
 
                             <Accordion defaultActiveKey={['0']} alwaysOpen>
@@ -88,7 +87,7 @@ const Home = () => {
                                         est laborum.
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item defaultActiveKey={['0']}>
+                                <Accordion.Item eventKey="1">
                                     <Accordion.Header>Persönlichkeit</Accordion.Header>
                                     <Accordion.Body>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -100,7 +99,7 @@ const Home = () => {
                                         est laborum.
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item defaultActiveKey={['0']}>
+                                <Accordion.Item eventKey="2">
                                     <Accordion.Header>Einzigartig</Accordion.Header>
                                     <Accordion.Body>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -112,8 +111,20 @@ const Home = () => {
                                         est laborum.
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item defaultActiveKey={['0']}>
+                                <Accordion.Item eventKey="3">
                                     <Accordion.Header>Zeitsparend</Accordion.Header>
+                                    <Accordion.Body>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="4">
+                                    <Accordion.Header>Persönlichkeit</Accordion.Header>
                                     <Accordion.Body>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -154,150 +165,32 @@ const Home = () => {
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
-                         <Card style={{width: '15em'}} className="websiteCustomCard">
-                                <Card.Img variant="top" className="cardImage"
-                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                                <Card.Body>
-                                    <Card.Title className="cardTitle">Schnitzel Wiener Art<Badge className="badgeTitle"
-                                                                                          pill>New</Badge></Card.Title>
-                                    <Card.Subtitle className="cardSubTitle"><House
-                                        className="icon"/> Hans im Glück{' '}
-                                        <ClockHistory className="icon"/> 30 min</Card.Subtitle>
-                                    <Card.Text className="cardText">
-                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
-                                        Zitronenschnitz und
-                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
-                                    </Card.Text>
-                                    <Card.Text className="cardBadgeContainer">
-                                        <Badge className="cardBadge" bg="secondary">bayerisch</Badge>{' '}
-                                        <Badge className="cardBadge" bg="secondary">Preis: 13,50€ </Badge>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                         <Card style={{width: '15em'}} className="websiteCustomCard">
-                                <Card.Img variant="top" className="cardImage"
-                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                                <Card.Body>
-                                    <Card.Title className="cardTitle">Schnitzel Wiener Art<Badge className="badgeTitle"
-                                                                                          pill>New</Badge></Card.Title>
-                                    <Card.Subtitle className="cardSubTitle"><House
-                                        className="icon"/> Hans im Glück{' '}
-                                        <ClockHistory className="icon"/> 30 min</Card.Subtitle>
-                                    <Card.Text className="cardText">
-                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
-                                        Zitronenschnitz und
-                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
-                                    </Card.Text>
-                                    <Card.Text className="cardBadgeContainer">
-                                        <Badge className="cardBadge" bg="secondary">bayerisch</Badge>{' '}
-                                        <Badge className="cardBadge" bg="secondary">Preis: 13,50€ </Badge>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                         <Card style={{width: '15em'}} className="websiteCustomCard">
-                                <Card.Img variant="top" className="cardImage"
-                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                                <Card.Body>
-                                    <Card.Title className="cardTitle">Schnitzel Wiener Art<Badge className="badgeTitle"
-                                                                                          pill>New</Badge></Card.Title>
-                                    <Card.Subtitle className="cardSubTitle"><House
-                                        className="icon"/> Hans im Glück{' '}
-                                        <ClockHistory className="icon"/> 30 min</Card.Subtitle>
-                                    <Card.Text className="cardText">
-                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
-                                        Zitronenschnitz und
-                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
-                                    </Card.Text>
-                                    <Card.Text className="cardBadgeContainer">
-                                        <Badge className="cardBadge" bg="secondary">bayrisch</Badge>{' '}
-                                        <Badge className="cardBadge" bg="secondary">Preis: 13,50€ </Badge>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                         <Card style={{width: '15em'}} className="websiteCustomCard">
-                                <Card.Img variant="top" className="cardImage"
-                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                                <Card.Body>
-                                    <Card.Title className="cardTitle">Schnitzel Wiener Art<Badge className="badgeTitle"
-                                                                                          pill>New</Badge></Card.Title>
-                                    <Card.Subtitle className="cardSubTitle"><House
-                                        className="icon"/> Hans im Glück{' '}
-                                        <ClockHistory className="icon"/> 30 min</Card.Subtitle>
-                                    <Card.Text className="cardText">
-                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
-                                        Zitronenschnitz und
-                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
-                                    </Card.Text>
-                                    <Card.Text className="cardBadgeContainer">
-                                        <Badge className="cardBadge" bg="secondary">bayrisch</Badge>{' '}
-                                        <Badge className="cardBadge" bg="secondary">Preis: 13,50€ </Badge>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                         <Card style={{width: '15em'}} className="websiteCustomCard">
-                                <Card.Img variant="top" className="cardImage"
-                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                                <Card.Body>
-                                    <Card.Title className="cardTitle">Schnitzel Wiener Art<Badge className="badgeTitle"
-                                                                                          pill>New</Badge></Card.Title>
-                                    <Card.Subtitle className="cardSubTitle"><House
-                                        className="icon"/> Hans im Glück{' '}
-                                        <ClockHistory className="icon"/> 30 min</Card.Subtitle>
-                                    <Card.Text className="cardText">
-                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
-                                        Zitronenschnitz und
-                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
-                                    </Card.Text>
-                                    <Card.Text className="cardBadgeContainer">
-                                        <Badge className="cardBadge" bg="secondary">bayrisch</Badge>{' '}
-                                        <Badge className="cardBadge" bg="secondary">Preis: 13,50€ </Badge>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
 
-                     <Card style={{width: '15em'}} className="websiteCustomCard">
-                                <Card.Img variant="top" className="cardImage"
-                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                                <Card.Body>
-                                    <Card.Title className="cardTitle">Schnitzel Wiener Art<Badge className="badgeTitle"
-                                                                                          pill>New</Badge></Card.Title>
-                                    <Card.Subtitle className="cardSubTitle"><House
-                                        className="icon"/> Hans im Glück{' '}
-                                        <ClockHistory className="icon"/> 30 min</Card.Subtitle>
-                                    <Card.Text className="cardText">
-                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
-                                        Zitronenschnitz und
-                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
-                                    </Card.Text>
-                                    <Card.Text className="cardBadgeContainer">
-                                        <Badge className="cardBadge" bg="secondary">bayrisch</Badge>{' '}
-                                        <Badge className="cardBadge" bg="secondary">Preis: 13,50€ </Badge>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                            <Card style={{width: '15em'}} className="websiteCustomCard">
-                                <Card.Img variant="top" className="cardImage"
-                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                                <Card.Body>
-                                    <Card.Title className="cardTitle">Schnitzel Wiener Art<Badge className="badgeTitle"
-                                                                                          pill>New</Badge></Card.Title>
-                                    <Card.Subtitle className="cardSubTitle"><House
-                                        className="icon"/> Hans im Glück{' '}
-                                        <ClockHistory className="icon"/> 30 min</Card.Subtitle>
-                                    <Card.Text className="cardText">
-                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
-                                        Zitronenschnitz und
-                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
-                                    </Card.Text>
-                                    <Card.Text className="cardBadgeContainer">
-                                        <Badge className="cardBadge" bg="secondary">bayrisch</Badge>{' '}
-                                        <Badge className="cardBadge" bg="secondary">Preis: 13,50€ </Badge>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-
+                        <Card className="customCardEnd" style={{width: '18rem'}}>
+                <Card.Body>
+                    <Card.Title className="buttonCardTitleBig"> <Badge className="buttonCardBadgeTitle" pill>Schritt 1:</Badge>{' '}Protein
+                    </Card.Title>
+                    <Card.Subtitle className="cardSubTitle"></Card.Subtitle>
+                    <Card.Text className="cardText">
+                    </Card.Text>
+                    <Card.Title className="cardTitle"></Card.Title>
+                    <Card.Subtitle className="cardSubTitle">Wähle deine Präferenzen</Card.Subtitle>
+                    <Card.Text className="cardText">
+                    </Card.Text>
+                    <Card.Text className="cardBadgeContainer">
+                       <Button variant="outline-danger" className="buttons">Linse</Button>
+                        <Button variant="outline-danger" className="buttons">Tofu</Button>
+                        <Button variant="outline-danger" className="buttons">Fleisch</Button>
+                        <Button variant="outline-danger" className="buttons">Fisch</Button>
+                        <Button variant="outline-danger" className="buttons">Bohne</Button>
+                        <Button variant="outline-danger" className="closedButtons"> Weiter </Button>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+                        <h6>h6. Bootstrap heading</h6>
 
                         </Row>
+
 
                 <br/>
                 <hr/>
@@ -307,74 +200,6 @@ const Home = () => {
 
             </div>
 
-            <div className="d-flex justify-content-around">
-                <Container>
-                    <Row>
-                        <Col>
-                            <Card style={{width: '25rem', margin: '12px', whiteSpace: 'pre-wrap'}}>
-                                <Card.Img variant="top"
-                                          src="https://media.istockphoto.com/photos/schnitzel-and-fried-potatoes-picture-id603258520?k=20&m=603258520&s=612x612&w=0&h=NF7aWLkDZEWAqFIScubghELMxjXIo1i5Wdl2cShSX-s="/>
-                                <Card.Body>
-                                    <Card.Title>Schnitzel Wiener Art</Card.Title>
-                                    <Card.Text>
-                                        Vom Schweinerücken in der Panko-Panade, in Butterschmalz gebacken, mit
-                                        Zitronenschnitz und
-                                        Preiselbeeren, mit gebackenen Kartoffelstaberln
-                                    </Card.Text>
-                                    <Card.Text>
-                                        <Badge bg="success">fettig</Badge>{' '}<Badge
-                                        bg="danger">deftig</Badge>{' '}<Badge
-                                        bg="secondary">gebacken</Badge>{' '}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style={{width: '25rem', margin: '12px'}}>
-                                <Card.Img variant="top"
-                                          src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-
-                        </Col>
-                        </Row>
-                    <Row>
-                        <Col>
-                            <Card style={{width: '25rem', margin: '12px'}}>
-                                <Card.Img variant="top"
-                                          src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style={{width: '25rem', margin: '12px'}}>
-                                <Card.Img variant="top"
-                                          src="https://hansimglueck-burgergrill.de/fileadmin/_processed_/8/d/csm_wilder-westen-neu_e5e0d47e22.jpg"/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
-            </Container>
-
-        </div>
 
 
             <div className="Widget">

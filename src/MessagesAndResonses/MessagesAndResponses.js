@@ -56,12 +56,12 @@ export function handleMessagesAndResponses(newMessage) {
 
         //TODO: Remove testing functions
         //renderCustomComponent(CustomCard, {text: newMessage})
-        addResponseMessage("Hallo");
-        addResponseMessage("Hallo was machst du gerade kann ich helfen");
+        //addResponseMessage("Hallo");
+        //addResponseMessage("Hallo was machst du gerade kann ich helfen");
         //renderCustomComponent(CustomCarousel, {items: items2});
-      // renderCustomComponent(CustomButtonCard, {items: testButtons["label"]});
+        // renderCustomComponent(CustomButtonCard, {items: testButtons["label"]});
         //renderCustomComponent(CustomCardGroup, {text: newMessage})
-       // renderCustomComponent(CustomCard, {text: newMessage})
+        // renderCustomComponent(CustomCard, {text: newMessage})
         //renderCustomComponent(CustomCarousel, {text: newMessage})
     }
 
@@ -73,12 +73,7 @@ export function handleMessagesAndResponses(newMessage) {
         let i;
         let j;
         let items = [];
-        console.log(jsonData)
         for (i = 0; i < jsonData.length; i++) {
-            //TODO: REMOVE
-            console.log(jsonData[i])
-
-            //buttons
             if (jsonData[i].hasOwnProperty('custom')) {
                 setQuickButtons([]);
 
@@ -88,21 +83,14 @@ export function handleMessagesAndResponses(newMessage) {
                 //console.log(jsonData[i]['custom'].data[0].description)
 
 
-                //Handle Custom Button functions
-                //TODO: Send reply in following syntax: "/keep_on_category" + '{"cat_ent"'':' + " " + '"' + i + '"' + "}}"
-                //TODO: f.e.: /keep_on_category{"cat_ent": "amerikanisch"}{"cat_ent": "spanisch"}...
-
+                //checks if message is from type "choose"
                 if (jsonData[i]['custom'].payload.match(/choose.*/)) {
-
                     let items = [];
                     let metaData = [];
 
                     for (j = 0; j < jsonData[i]['custom']['buttons'].length; j++) {
-
                         items[j] = jsonData[i]['custom']['buttons'][j].title;
-
                     }
-
 
                     metaData = [{
                         badge: jsonData[i]['custom']['meta_data'].Badge,
@@ -111,34 +99,14 @@ export function handleMessagesAndResponses(newMessage) {
                         title: jsonData[i]['custom']['meta_data'].title
                     }];
 
-
-
                     renderCustomComponent(CustomButtonCard, {items: items, metaData: metaData});
-
-
                 }
+                else if (jsonData[i]['custom'].payload.match(/dishes_selection.*/)) {
 
-
-
-
-
-
-
-
-
-
-                else{
-
-
-                //Handle Custom Json messages
-                //Handle custom carrousel
+                //checks if message is from type "carousel"
                 for (j = 0; j < jsonData[i]['custom'].data.length; j++) {
-
-
                 }
-
                 renderCustomComponent(CustomCarousel, {items: items})
-
 
                 /*
                     renderCustomComponent(CustomCarousel, {description: jsonData[i]['custom'].data[0].description,
@@ -151,23 +119,21 @@ export function handleMessagesAndResponses(newMessage) {
                 //console.log(jsonData[i])
                 //handleButtons(jsonData[i].buttons)
 
+            //checks if message is from type "buttons"
             else if (jsonData[i].hasOwnProperty('buttons')) {
 
                 if(jsonData[i].hasOwnProperty('text')){
                     addResponseMessage(jsonData[i].text)
                 }
-                console.log('TEst')
-                console.log(jsonData[i].buttons)
                 handleButtons(jsonData[i].buttons)
             }
 
-            //pictures
+            //checks if message is from type "image"
             else if (jsonData[i].hasOwnProperty("image")) {
                 handleImages(jsonData[i].image)
             }
 
-                //TODO: Handle Pictures and Text separately, searching for an identifier
-            //text
+            //checks if message is from type "text" - default case
             else {
                 console.log(jsonData[i].text)
                 addResponseMessage(jsonData[i].text)
@@ -175,15 +141,13 @@ export function handleMessagesAndResponses(newMessage) {
         }
     }
 
-    // handle bot response button
+    // handle bot response: basic buttons
     export function handleButtons(jsonData) {
 
         let i;
         let buttons = [];
 
         for (i = 0; i < jsonData.length; i++) {
-
-            console.log(jsonData[i].title)
             buttons[i] = {
                 label: jsonData[i].title,
                 value: jsonData[i].payload,
@@ -192,9 +156,7 @@ export function handleMessagesAndResponses(newMessage) {
         setQuickButtons(buttons);
     }
 
-
-
-    // handle bot response Images
+    // handle bot response: Images
     export function handleImages(jsonData) {
         console.log(jsonData)
         renderCustomComponent(CustomImage, {src: jsonData})

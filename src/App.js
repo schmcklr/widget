@@ -12,6 +12,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Contact from "./pages/Contact";
+import Team from "./pages/Team";
 import {Container, Nav, Navbar} from "react-bootstrap";
 
 
@@ -43,6 +44,7 @@ const Navigation = () => {
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/about">About</Nav.Link>
+                        <Nav.Link href="/team">Team</Nav.Link>
                         <Nav.Link href="/contact">Contact</Nav.Link>
                     </Nav>
                 </Container>
@@ -61,6 +63,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Home/>}/>
                 <Route exact path="/about" element={<About/>}/>
+                <Route exact path="/team" element={<Team/>}/>
                 <Route exact path="/contact" element={<Contact/>}/>
             </Routes>
         </div>
