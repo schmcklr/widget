@@ -27,13 +27,13 @@ export default class CustomCarousel extends Component {
                             <Card.Title className="cardTitle">{item.title} <Badge className="badgeTitle"
                                                                                   pill>#{item.position}</Badge></Card.Title>
                             <Card.Subtitle className="cardSubTitle"><House className="icon"/> {item.restaurant}{' '}
-                                <ClockHistory className="icon"/> 30 min</Card.Subtitle>
+                                <ClockHistory className="icon"/> 30 min{' '}{item.vegLabel}</Card.Subtitle>
                             <Card.Text className="cardText">
-                                {item.describtion}
+                                {item.subtitle}
                             </Card.Text>
                             <Card.Text className="cardBadgeContainer">
                                 <Badge className="cardBadge" bg="secondary">{item.category}</Badge>{' '}
-                                <Badge className="cardBadge" bg="secondary">Preis: {item.price}</Badge>
+                                <Badge className="cardBadge" bg="secondary">Preis: {item.price} €</Badge>
                             </Card.Text>
                             <Button variant="outline-danger" id="cardButton" className="cardButton"
                                     onClick={() => handleButtonClicked(item)}>{item.button}</Button>
