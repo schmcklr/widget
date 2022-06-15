@@ -48,7 +48,7 @@ const Home = () => {
 
 // function that is triggerd if a button is clicked
     const handleQuickButtonClicked = (value) => {
-        addUserMessage(value)
+        //addUserMessage(value)
         console.log(value)
         handleMessagesAndResponses(value)
 
