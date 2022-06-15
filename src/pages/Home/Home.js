@@ -37,8 +37,8 @@ const Home = () => {
 
         //TODO: Remove testing functions
         //renderCustomComponent(CustomCard, {text: newMessage})
-        addResponseMessage("Hallo");
-        addResponseMessage("Hallo was machst du gerade kann ich helfen");
+        //addResponseMessage("Hallo");
+        //addResponseMessage("Hallo was machst du gerade kann ich helfen");
         // renderCustomComponent(CustomCarousel, {items: items2});
         //renderCustomComponent(Test, {items: items2});
         // renderCustomComponent(ToggleButtonExample, {items: testButtons})
