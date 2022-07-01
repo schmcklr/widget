@@ -7,6 +7,7 @@ import {handleMessagesAndResponses} from "../MessagesAndResonses/MessagesAndResp
 
 let selectedItems = [];
 
+
 //function called if button is clicked
 function ButtonClicked(data, metaData) {
     let i;
@@ -56,6 +57,12 @@ export default class CustomButtonCard extends Component {
                                                                onClick={() => ButtonClicked(item)}> {item} </Button>))}
                         <Button variant="outline-danger" className="closedButtons"
                                 onClick={() => ButtonClicked("closed", this.props.metaData[0].intent)}> Weiter </Button>
+                    </Card.Text>
+
+
+
+                    <Card.Text className="cardBadgeContainer">
+                        {selectedItems.map(item => (<Badge className="cardBadge" bg="secondary">{item.category}</Badge>))}
                     </Card.Text>
                 </Card.Body>
             </Card>)
