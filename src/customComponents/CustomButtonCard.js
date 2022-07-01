@@ -28,7 +28,7 @@ function ButtonClicked(data, metaData) {
         }
         responseText += ']}'
         //show users selection in the widget
-        addUserMessage("schreibt...")
+        //addUserMessage("schreibt...")
         //addUserMessage(responseText);
         //sends message back to BE
         handleMessagesAndResponses(responseText);
