@@ -13,7 +13,10 @@ return (
         value="1"
         onChange={(e) => setChecked(e.currentTarget.checked)}
       >
-        Checked
+
+    {this.props.item}
+
+
       </ToggleButton>
 );
 }

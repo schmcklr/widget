@@ -9,13 +9,24 @@ import {ToggleButtonExample} from "./CustomButton";
 let selectedItems = [];
 
 
+
+
+
+
 //function called if button is clicked
 function ButtonClicked(data, metaData) {
+
+
+
     let i;
     let responseText;
     //path as long as user still chooses, selection will be stored in selectedItems array
     if (data !== "closed") {
         selectedItems[selectedItems.length] = data;
+
+            let myElement = document.getElementById(data);
+    myElement.classList.add("selectedButtons");
+   // myElement.classList.remove("buttons");
     }
     //path when user selection is finished, response text generation
     else {
@@ -33,6 +44,9 @@ function ButtonClicked(data, metaData) {
         //addUserMessage("schreibt...")
         //addUserMessage(responseText);
         //sends message back to BE
+        //TODO: Remove development function
+
+        console.log(responseText)
         handleMessagesAndResponses(responseText);
         selectedItems = [];
     }
@@ -55,19 +69,9 @@ export default class CustomButtonCard extends Component {
                     </Card.Text>
                     <Card.Text className="cardBadgeContainer">
                         {this.props.items.map(item => (<Button id={item} variant="outline-danger" className="buttons"
-                                                               onClick={() => ButtonClicked(item)}> {item} </Button>))}
+                                                               onClick={() => {ButtonClicked(item)}}> {item} </Button>))}
                         <Button variant="outline-danger" className="closedButtons"
                                 onClick={() => ButtonClicked("closed", this.props.metaData[0].intent)}> Weiter </Button>
-                    </Card.Text>
-
-
-
-                    {this.props.items.map(item => (<ToggleButtonExample id={item} variant="outline-danger" className="buttons"
-                                                               onClick={() => ButtonClicked(item)}> {item} </ToggleButtonExample>))}
-
-
-                    <Card.Text className="cardBadgeContainer">
-                        {selectedItems.map(item => (<Badge className="cardBadge" bg="secondary">{item.category}</Badge>))}
                     </Card.Text>
                 </Card.Body>
             </Card>)
