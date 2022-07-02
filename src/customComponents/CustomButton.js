@@ -7,7 +7,6 @@ return (
 
 <ToggleButton
         className="buttons"
-        id={this.item}
         type="checkbox"
         variant="outline-primary"
         checked={checked}
