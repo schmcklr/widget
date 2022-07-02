@@ -4,6 +4,7 @@ import "./cards.scss";
 import "./CustomButtonCard.scss";
 import {addUserMessage} from "react-chat-widget";
 import {handleMessagesAndResponses} from "../MessagesAndResonses/MessagesAndResponses";
+import {ToggleButtonExample} from "./CustomButton";
 
 let selectedItems = [];
 
@@ -59,6 +60,10 @@ export default class CustomButtonCard extends Component {
                                 onClick={() => ButtonClicked("closed", this.props.metaData[0].intent)}> Weiter </Button>
                     </Card.Text>
 
+
+
+                    {this.props.items.map(item => (<ToggleButtonExample id={item} variant="outline-danger" className="buttons"
+                                                               onClick={() => ButtonClicked(item)}> {item} </ToggleButtonExample>))}
 
 
                     <Card.Text className="cardBadgeContainer">
