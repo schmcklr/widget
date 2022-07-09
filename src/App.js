@@ -1,13 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import {
-    BrowserRouter as Router,
-    Switch,
     Route,
-    Link,
     Routes
 } from "react-router-dom";
-
 import Home from "./pages/home/Home";
 import About from "./pages/About";
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -15,26 +10,7 @@ import Contact from "./pages/contact/Contact";
 import Team from "./pages/Team";
 import {Container, Nav, Navbar} from "react-bootstrap";
 
-
-/*
-const Nav = () => <ul className="nav justify-content-center">
-    <li className="nav-item">
-        <a className="nav-link active" aria-current="page" href="/">home</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link" href="/about">About</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link" href="/contact">Contact</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link disabled">Team</a>
-    </li>
-</ul>
-
-*/
-
-
+//Navigation bar
 const Navigation = () => {
     return (
         <>
@@ -49,13 +25,10 @@ const Navigation = () => {
                     </Nav>
                 </Container>
             </Navbar>
-
         </>
     )
-
-
 }
-
+//App function
 function App() {
     return (
         <div className="App2">
@@ -69,5 +42,4 @@ function App() {
         </div>
     );
 }
-
 export default App;
