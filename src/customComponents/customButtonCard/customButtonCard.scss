@@ -1,5 +1,7 @@
-.buttons{
+//CSS formatting for Custom Button Card
 
+//buttons
+.buttons{
   font-size: 12px;
   width: 47%;
   color: rgba(174,0,0,0.9);
@@ -9,22 +11,6 @@
   margin-bottom: 7px;
   margin-left: 2px;
   margin-right: 2px;
-
-}
-
-.selectedButtons{
-
-  font-size: 12px;
-  width: 47%;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 7px;
-  margin-left: 2px;
-  margin-right: 2px;
-  color: white;
-  border-color: rgba(174,0,0,0.9);
-  background-color: rgba(174,0,0,0.9);
-
 }
 
 .buttons:hover{
@@ -46,15 +32,22 @@
   background-color: rgba(174,0,0,0.9) !important;
 }
 
-.buttons:disabled{
+//selected buttons
+.selectedButtons{
   font-size: 12px;
+  width: 47%;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 7px;
+  margin-left: 2px;
+  margin-right: 2px;
   color: white;
-  border-color: gray;
-  background-color: gray !important;
+  border-color: rgba(174,0,0,0.9);
+  background-color: rgba(174,0,0,0.9);
 }
 
-.closedButtons{
-
+//next button
+.nextButton{
   font-size: 12px;
   width: 96%;
   color: #00A86B;
@@ -65,47 +58,41 @@
   margin-bottom: 6px;
   margin-left: 2px;
   margin-right: 2px;
-
 }
 
-.closedButtons:hover{
-  font-size: 12px;
-  color: white;
-  border-color: #00A86B;
-  background-color: #00A86B;
-
-
-}
-.closedButtons:focus{
+.nextButton:hover{
   font-size: 12px;
   color: white;
   border-color: #00A86B;
   background-color: #00A86B;
 }
-.closedButtons:active{
+
+.nextButton:focus{
+  font-size: 12px;
+  color: white;
+  border-color: #00A86B;
+  background-color: #00A86B;
+}
+
+.nextButton:active{
   font-size: 12px;
   color: white;
   border-color: #00A86B !important;
   background-color: #00A86B !important;
 }
 
-
-
-
-
+//Card title
 .buttonCardTitleBig{
   font-size: 1.15em;
   margin-bottom: 11px;
   color: black;
 }
 
+//Card title badge
 .buttonCardBadgeTitle{
   background-color: #ddca63 !important;
   color: white;
   font-size: 12px;
   vertical-align: text-top;
   margin-top: 2px;
-
-
-
 }

@@ -1,15 +1,13 @@
 import {Component, useEffect, useState} from "react";
 import {Badge, Button, Card, Carousel, Dropdown, DropdownButton, Form, ListGroup, Row} from "react-bootstrap";
-import "./cards.scss";
+import "./styles.scss";
 import {House} from 'react-bootstrap-icons';
 import {ClockHistory} from "react-bootstrap-icons";
 import {addResponseMessage, addUserMessage, renderCustomComponent} from "react-chat-widget";
 import CustomCard from "./CustomCard";
 
-
-//function called if button is clicked
+//method called if button is clicked
 function handleButtonClicked(item) {
-    console.log(item.position)
     addResponseMessage('Vielen Dank für die Nutzung von Liefy!')
     addResponseMessage('Anbei findest du eine Zusammenfassung deiner Auswahl:')
     renderCustomComponent(CustomCard, {item})

@@ -1,9 +1,9 @@
 import {Component} from "react";
 import {Badge, Button, Card} from "react-bootstrap";
-import "./cards.scss";
+import "./styles.scss";
 import {ClockHistory, House} from "react-bootstrap-icons";
 
-//Custom Card, used for Summary of selection
+//Custom Card, used for summary of user selection
 export default class CustomCard extends Component {
     render() {
         return (<Card className="customCardEnd" style={{width: '18rem'}}>

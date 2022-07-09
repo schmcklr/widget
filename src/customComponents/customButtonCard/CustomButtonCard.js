@@ -1,37 +1,28 @@
 import {Component} from "react";
-import {Badge, Button, Card, ToggleButton, C} from "react-bootstrap";
-import "./cards.scss";
-import "./CustomButtonCard.scss";
-import {addUserMessage} from "react-chat-widget";
-import {handleMessagesAndResponses} from "../MessagesAndResonses/MessagesAndResponses";
-import {ToggleButtonExample} from "./CustomButton";
+import {Badge, Button, Card} from "react-bootstrap";
+import "../styles.scss";
+import "./customButtonCard.scss";
+import {handleMessagesAndResponses} from "../../MessagesAndResonses/MessagesAndResponses";
 
+
+//stores selected items
 let selectedItems = [];
-
-
-
-
-
 
 //function called if button is clicked
 function ButtonClicked(data, metaData) {
-
-
-
     let i;
     let responseText;
-    //path as long as user still chooses, selection will be stored in selectedItems array
-    if (data !== "closed") {
+    //user still chooses, selection will be stored in selectedItems array
+    if (data !== "next") {
         selectedItems[selectedItems.length] = data;
-
-            let myElement = document.getElementById(data);
-    myElement.classList.add("selectedButtons");
-   // myElement.classList.remove("buttons");
+        //adds css class so that button stays selected
+        let myElement = document.getElementById(data);
+        myElement.classList.add("selectedButtons");
     }
-    //path when user selection is finished, response text generation
+
+    //user selection is finished, response text generation
     else {
         responseText = metaData + '[';
-
         for (i = 0; i < selectedItems.length; i++) {
             if (i < selectedItems.length - 1) {
                 responseText += ('"' + selectedItems[i] + '", ');
@@ -40,14 +31,10 @@ function ButtonClicked(data, metaData) {
             }
         }
         responseText += ']}'
-        //show users selection in the widget
-        //addUserMessage("schreibt...")
-        //addUserMessage(responseText);
-        //sends message back to BE
-        //TODO: Remove development function
 
-        console.log(responseText)
+        //sends message back to BE
         handleMessagesAndResponses(responseText);
+        //deletes all items from array
         selectedItems = [];
     }
 }
@@ -70,8 +57,8 @@ export default class CustomButtonCard extends Component {
                     <Card.Text className="cardBadgeContainer">
                         {this.props.items.map(item => (<Button id={item} variant="outline-danger" className="buttons"
                                                                onClick={() => {ButtonClicked(item)}}> {item} </Button>))}
-                        <Button variant="outline-danger" className="closedButtons"
-                                onClick={() => ButtonClicked("closed", this.props.metaData[0].intent)}> Weiter </Button>
+                        <Button variant="outline-danger" className="nextButton"
+                                onClick={() => ButtonClicked("next", this.props.metaData[0].intent)}> Weiter </Button>
                     </Card.Text>
                 </Card.Body>
             </Card>)

@@ -1,4 +1,4 @@
-//needed to render pictures
+//needed to render pictures inside the chat container
 import {Component} from "react";
 export default class CustomImage extends Component {
     render() {
