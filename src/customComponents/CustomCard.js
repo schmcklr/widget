@@ -15,7 +15,7 @@ export default class CustomCard extends Component {
                 <Card.Title className="cardTitle">{this.props.item.title} <Badge className="badgeTitle"
                                                                                  pill>#{this.props.item.position}</Badge></Card.Title>
                 <Card.Subtitle className="cardSubTitle"><House className="icon"/> {this.props.item.restaurant}{' '}
-                    <ClockHistory className="icon"/> 30 min</Card.Subtitle>
+                    <ClockHistory className="icon"/> 30 min{' '}{' '}<Badge className="vegBadge" bg="secondary">{this.props.item.vegLabel}</Badge></Card.Subtitle>
                 <Card.Text className="cardText">
                     {this.props.item.subtitle}
                 </Card.Text>
