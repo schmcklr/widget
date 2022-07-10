@@ -11,7 +11,7 @@ const Contact = () => {
                 <hr/>
                 <p>Interesse geweckt? Gerne stellen wir unser Chat Widget „Liefy Lieferbox“ auch deiner Online
                     Food-Branche zur Verfügung und passen es bei Bedarf individuell für dich an!
-                    Kontaktiere uns unter Liefy@gmx.com
+                    Kontaktiere uns unter Liefy@gmx.de
                     Wir freuen uns schon darauf, auch deine Food-Website mit unserem automatisierten Beratungsservice
                     weiter zu digitalisieren!
                 </p>
