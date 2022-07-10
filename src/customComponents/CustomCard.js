@@ -26,7 +26,7 @@ export default class CustomCard extends Component {
                             className="cardButtonRestaurant">{this.props.item.restaurant}</Button>
                     <Button href="https://www.lieferando.de/" variant="outline-danger" id="cardButton"
                             className="cardButtonLieferando">Lieferando.de</Button>
-                    <Card.Title className="cardBottom">Liefy wünscht Buon Appetito!</Card.Title>
+                    <Card.Title className="cardBottom">Liefy wünscht Guten Appetit!</Card.Title>
                 </Card.Text>
             </Card.Body>
         </Card>)
