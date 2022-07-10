@@ -38,7 +38,15 @@ export function botResponse(jsonData) {
     let items = [];
     for (i = 0; i < jsonData.length; i++) {
         if (jsonData[i].hasOwnProperty('custom')) {
-            setQuickButtons([]);
+
+             let button = [];
+        button[0] = {
+            label: 'Neustart',
+            value: '/restart',
+        };
+        setQuickButtons(button);
+    }
+            //setQuickButtons([]);
 
             //checks if message is from type "choose" (used for all user selection)
             if (jsonData[i]['custom'].payload.match(/choose.*/)) {
