@@ -45,7 +45,7 @@ export function botResponse(jsonData) {
             value: '/restart',
         };
         setQuickButtons(button);
-    }
+
             //setQuickButtons([]);
 
             //checks if message is from type "choose" (used for all user selection)
