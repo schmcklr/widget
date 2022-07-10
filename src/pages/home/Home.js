@@ -33,7 +33,13 @@ const Home = () => {
 // function that is triggerd if a button is clicked
     const handleQuickButtonClicked = (value) => {
         handleMessagesAndResponses(value)
-        //setQuickButtons([]);
+
+        let button = [];
+        button[0] = {
+            label: 'Neustart',
+            value: '/restart',
+        };
+        setQuickButtons(button);
     }
 
 
