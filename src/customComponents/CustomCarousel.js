@@ -3,7 +3,7 @@ import {Badge, Button, Card, Carousel, Dropdown, DropdownButton, Form, ListGroup
 import "./styles.scss";
 import {House} from 'react-bootstrap-icons';
 import {ClockHistory} from "react-bootstrap-icons";
-import {addResponseMessage, addUserMessage, renderCustomComponent} from "react-chat-widget";
+import {addResponseMessage, addUserMessage, renderCustomComponent, setQuickButtons} from "react-chat-widget";
 import CustomCard from "./CustomCard";
 
 //method called if button is clicked
@@ -11,6 +11,7 @@ function handleButtonClicked(item) {
     addResponseMessage('Vielen Dank für die Nutzung von Liefy!')
     addResponseMessage('Anbei findest du eine Zusammenfassung deiner Auswahl:')
     renderCustomComponent(CustomCard, {item})
+
 }
 
 //Custom Carousel, used for displaying the recommended dishes

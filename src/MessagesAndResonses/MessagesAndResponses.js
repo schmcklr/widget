@@ -9,7 +9,7 @@ let askForName;
 export function handleMessagesAndResponses(newMessage) {
 
     if (askForName === true){
-        newMessage = '/tell_name{' + newMessage + '}';
+        newMessage = '/tell_name{"name_ent": "' + newMessage + '"}';
         askForName = false;
     }
 
@@ -38,6 +38,7 @@ export function handleMessagesAndResponses(newMessage) {
         });
 }
 
+
 // function which checks message type of Bot Response
 export function botResponse(jsonData) {
     let i;
@@ -46,7 +47,8 @@ export function botResponse(jsonData) {
     for (i = 0; i < jsonData.length; i++) {
         if (jsonData[i].hasOwnProperty('custom')) {
 
-            //setQuickButtons([]);
+            //using custom button card - quick buttons not needed
+            setQuickButtons([]);
 
             //checks if message is from type "choose" (used for all user selection)
             if (jsonData[i]['custom'].payload.match(/choose.*/)) {
@@ -107,7 +109,7 @@ export function botResponse(jsonData) {
         //checks if message is from type "text" - default case
         else {
             //needed to pass name to backend
-            if (jsonData[i].match(/😋*/)){
+            if (jsonData[i].text.match(/😋.*/)){
                 askForName = true;
             }
             //method to add a new message written as a response to a user input (provided by react-chat-widget)
