@@ -1,35 +1,30 @@
-import {Component, useEffect} from "react";
 import {
     Widget,
-    addResponseMessage,
     setQuickButtons,
-    addUserMessage,
-    renderCustomComponent,
-    handleQuickButtonClicked
 } from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 import "./home.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Accordion, Badge, Button, Card, Carousel, Col, Container, ListGroup, Placeholder, Row} from "react-bootstrap";
+import {Accordion, Badge, Row} from "react-bootstrap";
 import {handleMessagesAndResponses} from "../../MessagesAndResonses/MessagesAndResponses";
 
 const Home = () => {
 
 
-    // handle user Message typed in via keyboard
+    // handle User-Message typed in via keyboard (provided by react-chat-widget)
     const handleNewUserMessage = (newMessage) => {
         handleMessagesAndResponses(newMessage)
     }
 
-// function that is triggerd if a button is clicked
+    // function that is triggerd if a button is clicked (provided by react-chat-widget)
     const handleQuickButtonClicked = (value) => {
         handleMessagesAndResponses(value)
-
         setQuickButtons([]);
     }
 
 
     return (
+        //code of website (Home-site)
         <div className="container">
             <div className="row">
                 <h1 className="text-left p-5"><br/>Liefy die Lieferbox <Badge bg="secondary">Beta</Badge>
@@ -121,7 +116,6 @@ const Home = () => {
                         emojis={'NO'}
                         senderPlaceHolder={"Schreibe eine Nachricht..."}
                         showTimeStamp={false}
-                    //resizable={'NO'}
                 />
             </div>
         </div>
