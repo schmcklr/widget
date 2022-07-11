@@ -9,18 +9,9 @@ import {
 } from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 import "./home.scss";
-import * as PropTypes from "prop-types";
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import custom components
-import CustomCarousel from "../../customComponents/CustomCarousel";
-import CustomCard from "../../customComponents/CustomCard";
-import CustomImage from "../../customComponents/CustomImage";
 import {Accordion, Badge, Button, Card, Carousel, Col, Container, ListGroup, Placeholder, Row} from "react-bootstrap";
 import {handleMessagesAndResponses} from "../../MessagesAndResonses/MessagesAndResponses";
-
-
-//TODO: Restructure Code maybe in seperate files and not all function in the home.js (Norman)
-//TODO: After the button clicked and send to BE no responses are coming -> fix
 
 const Home = () => {
 
@@ -34,12 +25,7 @@ const Home = () => {
     const handleQuickButtonClicked = (value) => {
         handleMessagesAndResponses(value)
 
-        let button = [];
-        button[0] = {
-            label: 'Neustart',
-            value: '/restart',
-        };
-        setQuickButtons(button);
+        setQuickButtons([]);
     }
 
 

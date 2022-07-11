@@ -4,7 +4,6 @@ import "../styles.scss";
 import "./customButtonCard.scss";
 import {handleMessagesAndResponses} from "../../MessagesAndResonses/MessagesAndResponses";
 
-
 //stores selected items
 let selectedItems = [];
 
@@ -20,7 +19,7 @@ function ButtonClicked(data, metaData) {
         myElement.classList.add("selectedButtons");
     }
 
-    //user selection is finished, response text generation
+    //user selection is finished, response text generation - intent for BE
     else {
         responseText = metaData + '[';
         for (i = 0; i < selectedItems.length; i++) {

@@ -4,7 +4,15 @@ import CustomCarousel from "../customComponents/CustomCarousel";
 import CustomButtonCard from "../customComponents/customButtonCard/CustomButtonCard";
 import CustomImage from "../customComponents/CustomImage";
 
+
+let askForName;
 export function handleMessagesAndResponses(newMessage) {
+
+    if (askForName === true){
+        newMessage = '/tell_name{' + newMessage + '}';
+        askForName = false;
+    }
+
     // POST request using fetch() (used for sending/receiving messages)
     fetch("http://localhost:5005/webhooks/rest/webhook", {
         // Adding method type
@@ -30,7 +38,6 @@ export function handleMessagesAndResponses(newMessage) {
         });
 }
 
-
 // function which checks message type of Bot Response
 export function botResponse(jsonData) {
     let i;
@@ -38,13 +45,6 @@ export function botResponse(jsonData) {
     let items = [];
     for (i = 0; i < jsonData.length; i++) {
         if (jsonData[i].hasOwnProperty('custom')) {
-
-             let button = [];
-        button[0] = {
-            label: 'Neustart',
-            value: '/restart',
-        };
-        setQuickButtons(button);
 
             //setQuickButtons([]);
 
@@ -105,6 +105,10 @@ export function botResponse(jsonData) {
 
         //checks if message is from type "text" - default case
         else {
+            //needed to pass name to backend
+            if (jsonData[i].match(/😋*/)){
+                askForName = true;
+            }
             //method to add a new message written as a response to a user input (provided by react-chat-widget)
             addResponseMessage(jsonData[i].text)
         }
