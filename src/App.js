@@ -7,7 +7,7 @@ import Home from "./pages/home/Home";
 import About from "./pages/About";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Contact from "./pages/contact/Contact";
-import Team from "./pages/Team";
+import Team from "./pages/team/Team";
 import {Container, Nav, Navbar} from "react-bootstrap";
 
 //Navigation bar

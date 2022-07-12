@@ -1,3 +1,4 @@
+import Image from 'react-bootstrap/Image'
 const Team = () => {
     return (
         <div className="container">
@@ -27,6 +28,14 @@ const Team = () => {
                     Kundenberatung verstärkt zu digitalisieren und weiter voranzutreiben.
                 </p>
             </div>
+
+
+            <img
+      src='/src/picture/teamPicture.jpeg'
+      className='img-thumbnail'
+      alt='...'
+      style={{ maxWidth: '24rem' }}
+    />
         </div>
     );
 };
