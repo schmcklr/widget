@@ -32,7 +32,7 @@ export default class CustomCarousel extends Component {
                             </Card.Text>
                             <Card.Text className="cardBadgeContainer">
                                 <Badge className="cardBadge" bg="secondary">{item.category}</Badge>{' '}
-                                <Badge className="cardBadge" bg="secondary">Preis: {item.price}</Badge>
+                                <Badge className="cardBadge" bg="secondary">Preis: {item.price} €</Badge>
                             </Card.Text>
                             <Button variant="outline-danger" id="cardButton" className="cardButton"
                                     onClick={() => handleButtonClicked(item)}>{item.button}</Button>

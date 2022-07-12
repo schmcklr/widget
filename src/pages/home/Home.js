@@ -22,7 +22,6 @@ const Home = () => {
         setQuickButtons([]);
     }
 
-
     return (
         //code of website (Home-site)
         <div className="container">

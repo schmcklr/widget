@@ -21,7 +21,7 @@ export default class CustomCard extends Component {
                 </Card.Text>
                 <Card.Text className="cardBadgeContainer">
                     <Badge className="cardBadge" bg="secondary">{this.props.item.category}</Badge>{' '}
-                    <Badge className="cardBadge" bg="secondary">Preis: {this.props.item.price}</Badge>
+                    <Badge className="cardBadge" bg="secondary">Preis: {this.props.item.price} €</Badge>
                     <Button href={this.props.item.restaurantLink} variant="outline-danger" id="cardButton"
                             className="cardButtonRestaurant">{this.props.item.restaurant}</Button>
                     <Button href="https://www.lieferando.de/" variant="outline-danger" id="cardButton"
