@@ -1,0 +1,11 @@
+.teamPicture{
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    width: 50%;
+    border-radius: 5px;
+
+}

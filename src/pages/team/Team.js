@@ -1,4 +1,4 @@
-import Image from 'react-bootstrap/Image'
+import "./team.css";
 const Team = () => {
     return (
         <div className="container">
@@ -31,11 +31,12 @@ const Team = () => {
 
 
             <img
-      src='src/pictures/teamPicture.png'
-      className='img-thumbnail'
-      alt='...'
-      style={{ maxWidth: '24rem', alignItems: 'center', objectFit: 'cover'}}
-    />
+                src='https://github.com/schmcklr/widget/blob/489bca4f0a306abb88862e475f8a7669d8ef9cf5/src/pictures/teamPicture.png?raw=true'
+                className='teamPicture'
+                alt='Bild des Teams'
+                style={{alignSelf: 'center', objectFit: 'cover'}}
+            />
+
         </div>
     );
 };
