@@ -97,7 +97,7 @@ const Home = () => {
                     <h2 style={{alignItems: "center"}}>Weitere Vorteile</h2>
                     <hr/>
                     Neben diesen fünf großartigen Funktionen ist ein weiterer Vorteil, dass unser Chat Widget modular
-                    entwickelt wurde, sodass es dadurch flexibel auf jeder Website integrierbar / implementierbar ist
+                    entwickelt wurde, sodass es dadurch flexibel auf jeder Website implementierbar ist
                     und sofort genutzt werden kann. Ebenso kann das Corporate Design beliebig angepasst werden, sodass
                     die optische Aufmachung perfekt auf jede Food-Website passt!
                     <br/>
