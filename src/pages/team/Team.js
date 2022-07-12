@@ -31,10 +31,10 @@ const Team = () => {
 
 
             <img
-      src='/src/picture/teamPicture.jpeg'
+      src='src/pictures/teamPicture.png'
       className='img-thumbnail'
       alt='...'
-      style={{ maxWidth: '24rem' }}
+      style={{ maxWidth: '24rem', alignItems: 'center', objectFit: 'cover'}}
     />
         </div>
     );
