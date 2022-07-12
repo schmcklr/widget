@@ -10,7 +10,7 @@ import {handleMessagesAndResponses} from "../../MessagesAndResonses/MessagesAndR
 
 const Home = () => {
 
-
+    handleMessagesAndResponses('Hallo');
     // handle User-Message typed in via keyboard (provided by react-chat-widget)
     const handleNewUserMessage = (newMessage) => {
         handleMessagesAndResponses(newMessage)
@@ -115,6 +115,7 @@ const Home = () => {
                         emojis={'NO'}
                         senderPlaceHolder={"Schreibe eine Nachricht..."}
                         showTimeStamp={false}
+                    
                 />
             </div>
         </div>
