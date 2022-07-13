@@ -22,7 +22,7 @@ const Home = () => {
 
         //starting conversation with bot
         if(value === '/restart'){
-            Document.reload();
+            Document.location.reload();
             handleMessagesAndResponses('Hallo')
         }
 
