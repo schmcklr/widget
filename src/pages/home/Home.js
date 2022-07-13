@@ -19,7 +19,19 @@ const Home = () => {
     // function that is triggerd if a button is clicked (provided by react-chat-widget)
     const handleQuickButtonClicked = (value) => {
         handleMessagesAndResponses(value)
-        setQuickButtons([]);
+
+        //starting conversation with bot
+        if(value === '/restart'){
+            handleMessagesAndResponses('Hallo')
+        }
+
+        //create restart button
+        let restartButton = [];
+        restartButton [0] = {
+            label: 'Neustart',
+            value: '/restart',
+        };
+        setQuickButtons(restartButton);
     }
 
     return (

@@ -1,6 +1,6 @@
 //options for header with title
 .rcw-conversation-container > .rcw-header {
-  background: rgba(174,0,0,1);
+  background: rgba(174, 0, 0, 1);
   //border-radius: 10px 10px 0 0;
   text-align: left;
   font-weight: bolder;
@@ -10,6 +10,7 @@
   height: 64px;
 
 }
+
 .rcw-title {
   //font-weight: bold;
   text-align: left;
@@ -17,22 +18,23 @@
 
 }
 
-.rcw-messages-container{
+.rcw-messages-container {
 
-   height: 550px;
-   max-height: 550px;
+  height: 550px;
+  max-height: 550px;
 
 }
 
 //customize whole container
-.rcw-conversation-container{
+.rcw-conversation-container {
   max-width: 300px;
   height: 670px;
   max-height: 670px;
 
 
 }
-.rcw-message{
+
+.rcw-message {
 
 }
 
@@ -51,6 +53,7 @@
   margin-top: 3px;
   margin-right: 6px;
 }
+
 .rcw-message {
   margin-bottom: 3px;
   margin-top: 3px;
@@ -60,7 +63,7 @@
 
 //options for user text
 .rcw-client .rcw-message-text {
-  background: rgba(174,0,0,0.4);
+  background: rgba(174, 0, 0, 0.4);
   max-width: 300px;
   padding: 10px 10px 10px;
   font-size: 14px;
@@ -69,61 +72,53 @@
 
 //options for closing button
 .rcw-conversation-container .rcw-close-button {
-    background-color: rgba(174,0,0,0.9);
+  background-color: rgba(174, 0, 0, 0.9);
 }
 
 //launcher icon before u start the widget / before u open it
 .rcw-launcher {
-  background-color: rgba(174,0,0,0.9);
+  background-color: rgba(174, 0, 0, 0.9);
 }
 
 //changing the messages in general (user and bot) - font, color and so on
 .rcw-message {
   color: black;
 }
+
 //changing the background color of messages container
 .rcw-messages-container {
- // background-color: white;
-
 }
 
 //customize box at the bottom of the widget, where also the type in field is included
 .rcw-sender {
-  //background-color: #fb4f14;
-
 }
 
-//customize send button
-.rcw-send {
-  //background-color: orangered;
-}
 
 .rcw-picker-btn {
- // background-color: orangered;
   display: none;
 }
 
-.rcw-input{
+.rcw-input {
   font-size: 14px;
   display: flex;
-   margin-left: 0px;
+  margin-left: 0px;
 }
 
-.rcw-send{
+.rcw-send {
   display: flex;
 }
 
-.rcw-sender{
+.rcw-sender {
   display: flex;
   align-items: center;
 
 }
 
 //customize quick buttons
-.rcw-conversation-container > .quick-buttons-container > .quick-buttons > .quick-list-button > .quick-button{
+.rcw-conversation-container > .quick-buttons-container > .quick-buttons > .quick-list-button > .quick-button {
 
-  border-color: rgba(174,0,0,0.9);
-  color: rgba(174,0,0,0.9);
+  border-color: rgba(174, 0, 0, 0.9);
+  color: rgba(174, 0, 0, 0.9);
   font-size: 14px;
   font-family: system-ui;
   font-weight: normal;
@@ -133,17 +128,17 @@
 }
 
 //customize style if button is clicked
-.rcw-conversation-container > .quick-buttons-container > .quick-buttons > .quick-list-button > .quick-button:active{
-  background-color: rgba(174,0,0,0.9);
-  border-color: rgba(174,0,0,0.9);
+.rcw-conversation-container > .quick-buttons-container > .quick-buttons > .quick-list-button > .quick-button:active {
+  background-color: rgba(174, 0, 0, 0.9);
+  border-color: rgba(174, 0, 0, 0.9);
   color: white;
   //border-width: 3px;
 }
 
 //quick button container height
-.rcw-conversation-container > .quick-buttons-container  {
+.rcw-conversation-container > .quick-buttons-container {
 
- // height: 90px;
+  // height: 90px;
 }
 
 .rcw-new-message {

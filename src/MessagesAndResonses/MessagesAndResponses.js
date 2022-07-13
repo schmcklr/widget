@@ -47,8 +47,14 @@ export function botResponse(jsonData) {
     for (i = 0; i < jsonData.length; i++) {
         if (jsonData[i].hasOwnProperty('custom')) {
 
-            //using custom button card - quick buttons not needed
-            setQuickButtons([]);
+            //using custom button card - quick buttons not needed - restart button added
+            let restartButton = [];
+            restartButton [0] = {
+                label: 'Neustart',
+                value: '/restart',
+            };
+
+            setQuickButtons(restartButton);
 
             //checks if message is from type "choose" (used for all user selection)
             if (jsonData[i]['custom'].payload.match(/choose.*/)) {
