@@ -6,7 +6,7 @@ import "react-chat-widget/lib/styles.css";
 import "./home.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Accordion, Badge, Row} from "react-bootstrap";
-import {handleMessagesAndResponses} from "../../MessagesAndResonses/MessagesAndResponses";
+import {handleMessagesAndResponses} from "../../messagesAndResonses/MessagesAndResponses";
 
 const Home = () => {
 
@@ -20,12 +20,12 @@ const Home = () => {
     const handleQuickButtonClicked = (value) => {
         handleMessagesAndResponses(value)
 
-        //starting conversation with bot
-        if(value === '/restart'){
+        //starts conversation with bot
+        if (value === '/restart') {
             document.location.reload();
         }
 
-        //create restart button
+        //creates restart button
         let restartButton = [];
         restartButton [0] = {
             label: 'Neustart',
@@ -127,7 +127,6 @@ const Home = () => {
                         emojis={'NO'}
                         senderPlaceHolder={"Schreibe eine Nachricht..."}
                         showTimeStamp={false}
-                    
                 />
             </div>
         </div>

@@ -2,7 +2,7 @@ import {Component} from "react";
 import {Badge, Button, Card} from "react-bootstrap";
 import "../styles.scss";
 import "./customButtonCard.scss";
-import {handleMessagesAndResponses} from "../../MessagesAndResonses/MessagesAndResponses";
+import {handleMessagesAndResponses} from "../../messagesAndResonses/MessagesAndResponses";
 
 //stores selected items
 let selectedItems = [];
