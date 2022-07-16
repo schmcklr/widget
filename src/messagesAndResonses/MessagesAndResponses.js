@@ -6,7 +6,11 @@ import CustomImage from "../customComponents/CustomImage";
 
 
 let askForName;
+
+
 export function handleMessagesAndResponses(newMessage) {
+
+    console.log(newMessage);
 
     if (askForName === true){
         newMessage = '/tell_name{"name_ent": "' + newMessage + '"}';
