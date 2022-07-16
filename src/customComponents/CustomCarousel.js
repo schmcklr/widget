@@ -1,5 +1,5 @@
 import {Component, useEffect, useState} from "react";
-import {Badge, Button, Card, Carousel, Dropdown, DropdownButton, Form, ListGroup, Row} from "react-bootstrap";
+import {Badge, Button, Card, Carousel} from "react-bootstrap";
 import "./styles.scss";
 import {House} from 'react-bootstrap-icons';
 import {ClockHistory} from "react-bootstrap-icons";
