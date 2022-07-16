@@ -8,9 +8,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Accordion, Badge, Row} from "react-bootstrap";
 import {handleMessagesAndResponses} from "../../messagesAndResonses/MessagesAndResponses";
 
+//counts number of conversation starts
+let numStart = 0;
 const Home = () => {
 
-    handleMessagesAndResponses('Hallo');
+    //Starts conversation with bot
+    if (numStart === 0) {
+        handleMessagesAndResponses('Hi');
+        numStart += 1;
+    }
+    ;
+
+
     // handle User-Message typed in via keyboard (provided by react-chat-widget)
     const handleNewUserMessage = (newMessage) => {
         handleMessagesAndResponses(newMessage)
