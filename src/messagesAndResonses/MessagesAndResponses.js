@@ -4,14 +4,11 @@ import CustomCarousel from "../customComponents/CustomCarousel";
 import CustomButtonCard from "../customComponents/customButtonCard/CustomButtonCard";
 import CustomImage from "../customComponents/CustomImage";
 
-
+//Checks whether the bot has asked for the user's name
 let askForName;
 
-
 export function handleMessagesAndResponses(newMessage) {
-
-    console.log(newMessage);
-
+    //if not yet asked, name is returned as intent (first question of BE)
     if (askForName === true){
         newMessage = '/tell_name{"name_ent": "' + newMessage + '"}';
         askForName = false;
@@ -43,24 +40,23 @@ export function handleMessagesAndResponses(newMessage) {
 }
 
 
-// function which checks message type of Bot Response
+//checks message type of bot response
 export function botResponse(jsonData) {
     let i;
     let j;
-    let items = [];
     for (i = 0; i < jsonData.length; i++) {
         if (jsonData[i].hasOwnProperty('custom')) {
 
-            //using custom button card - quick buttons not needed - restart button added
+            //using custom button card - quick buttons not needed
             let restartButton = [];
+            //adds restart button
             restartButton [0] = {
                 label: 'Neustart',
                 value: ['Neustart', '/restart']
             };
-
             setQuickButtons(restartButton);
 
-            //checks if message is from type "choose" (used for all user selection)
+            //checks if message is from type "choose" (used for all user selections)
             if (jsonData[i]['custom'].payload.match(/choose.*/)) {
                 let items = [];
                 let metaData = [];
@@ -75,7 +71,7 @@ export function botResponse(jsonData) {
                     subtitle: jsonData[i]['custom']['meta_data'].subtitle,
                     title: jsonData[i]['custom']['meta_data'].title
                 }];
-                //Method to render a custom component inside the messages container (provided by react-chat-widget)
+                //Method to render a custom component inside the chat container (provided by react-chat-widget)
                 renderCustomComponent(CustomButtonCard, {items: items, metaData: metaData});
             }
 
@@ -98,7 +94,7 @@ export function botResponse(jsonData) {
                             position: j
                         };
                 }
-                //method to render a custom component inside the messages container (provided by react-chat-widget)
+                //method to render a custom component inside the chat container (provided by react-chat-widget)
                 renderCustomComponent(CustomCarousel, {items: dishes})
             }
         }
@@ -118,7 +114,7 @@ export function botResponse(jsonData) {
 
         //checks if message is from type "text" - default case
         else {
-            //needed to pass name to backend
+            //needed to pass name correctly to BE
             if (jsonData[i].text.match(/😋.*/)){
                 askForName = true;
             }
@@ -128,7 +124,7 @@ export function botResponse(jsonData) {
     }
 }
 
-// handle bot response: basic buttons
+// handle bot response: quick buttons
 export function handleButtons(jsonData) {
     let i;
     let buttons = [];

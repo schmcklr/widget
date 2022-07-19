@@ -8,30 +8,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Accordion, Badge, Row} from "react-bootstrap";
 import {handleMessagesAndResponses} from "../../messagesAndResonses/MessagesAndResponses";
 
-//counts number of conversation starts
-let numStart = 0;
+//checks if conversation already started by the bot
+let conversationStart = false;
 const Home = () => {
-
-    //Starts conversation with bot
-    if (numStart === 0) {
+    //starts conversation with bot
+    if (conversationStart === false) {
         handleMessagesAndResponses('Hi');
-        numStart += 1;
-    }
-    ;
+        conversationStart = true;
+    };
 
     // handle User-Message typed in via keyboard (provided by react-chat-widget)
     const handleNewUserMessage = (newMessage) => {
         handleMessagesAndResponses(newMessage)
     }
 
-    // function that is triggerd if a button is clicked (provided by react-chat-widget)
+    // triggerd if a button is clicked (provided by react-chat-widget)
     const handleQuickButtonClicked = (value) => {
         handleMessagesAndResponses(value[1]);
 
-        //adds button message as user message
+        //adds button message as user message to the caht container
         addUserMessage(value[0]);
 
-        //starts conversation with bot
+        //resets conversation with bot
         if (value[1] === '/restart') {
             document.location.reload();
         }
