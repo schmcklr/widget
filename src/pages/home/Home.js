@@ -1,6 +1,6 @@
 import {
     Widget,
-    setQuickButtons,
+    setQuickButtons, addUserMessage,
 } from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 import "./home.scss";
@@ -27,19 +27,22 @@ const Home = () => {
 
     // function that is triggerd if a button is clicked (provided by react-chat-widget)
     const handleQuickButtonClicked = (value) => {
-        handleMessagesAndResponses(value)
+        handleMessagesAndResponses(value[1]);
+
+        //adds button message as user message
+        addUserMessage(value[0]);
 
         //starts conversation with bot
-        if (value === '/restart') {
+        if (value[1] === '/restart') {
             document.location.reload();
         }
 
         //creates restart button
         let restartButton = [];
         restartButton [0] = {
-            label: 'Neustart',
-            value: '/restart',
-        };
+                label: 'Neustart',
+                value: ['Neustart', '/restart']
+            };
         setQuickButtons(restartButton);
     }
 

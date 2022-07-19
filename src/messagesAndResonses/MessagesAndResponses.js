@@ -55,7 +55,7 @@ export function botResponse(jsonData) {
             let restartButton = [];
             restartButton [0] = {
                 label: 'Neustart',
-                value: '/restart',
+                value: ['Neustart', '/restart']
             };
 
             setQuickButtons(restartButton);
@@ -136,7 +136,7 @@ export function handleButtons(jsonData) {
     for (i = 0; i < jsonData.length; i++) {
         buttons[i] = {
             label: jsonData[i].title,
-            value: jsonData[i].payload,
+            value: [jsonData[i].title, jsonData[i].payload]
         };
     }
     //method to add quick buttons (provided by react-chat-widget)
