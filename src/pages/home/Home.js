@@ -26,7 +26,7 @@ const Home = () => {
     const handleQuickButtonClicked = (value) => {
         handleMessagesAndResponses(value[1]);
 
-        //adds button message as user message to the caht container
+        //adds button message as user message to the chat container
         addUserMessage(value[0]);
 
         //resets conversation with bot
