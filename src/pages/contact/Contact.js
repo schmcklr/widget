@@ -1,8 +1,7 @@
-import {Badge, Button, Form} from "react-bootstrap";
-
+import {Button, Form} from "react-bootstrap";
 import "./contact.scss";
 
-
+//code of website (Contact-site)
 const Contact = () => {
     return (
         <div className="container">

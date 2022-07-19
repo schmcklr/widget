@@ -1,3 +1,4 @@
+//code of website (About-site)
 const About = () => {
     return (
         <div className="container">

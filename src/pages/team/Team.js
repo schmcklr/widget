@@ -1,4 +1,6 @@
 import "./team.css";
+
+//code of website (Team-site)
 const Team = () => {
     return (
         <div className="container">
@@ -36,7 +38,6 @@ const Team = () => {
                 alt='Bild des Teams'
                 style={{alignSelf: 'center', objectFit: 'cover'}}
             />
-
         </div>
     );
 };

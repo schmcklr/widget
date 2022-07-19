@@ -19,7 +19,6 @@ const Home = () => {
     }
     ;
 
-
     // handle User-Message typed in via keyboard (provided by react-chat-widget)
     const handleNewUserMessage = (newMessage) => {
         handleMessagesAndResponses(newMessage)

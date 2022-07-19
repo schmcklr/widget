@@ -10,7 +10,7 @@ import Contact from "./pages/contact/Contact";
 import Team from "./pages/team/Team";
 import {Container, Nav, Navbar} from "react-bootstrap";
 
-//Navigation bar
+//Adds navigation bar
 const Navigation = () => {
     return (
         <>
@@ -28,7 +28,8 @@ const Navigation = () => {
         </>
     )
 }
-//App function
+
+//App function - Merges created website components and allows navigation between websites
 function App() {
     return (
         <div className="App2">
@@ -42,4 +43,5 @@ function App() {
         </div>
     );
 }
+
 export default App;

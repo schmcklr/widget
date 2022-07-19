@@ -1,51 +1,33 @@
 //options for header with title
 .rcw-conversation-container > .rcw-header {
   background: rgba(174, 0, 0, 1);
-  //border-radius: 10px 10px 0 0;
   text-align: left;
   font-weight: bolder;
-  //font-size: 100px;
   //altering size of header
   padding: 3px 0px 0px 13px;
   height: 64px;
-
 }
 
 .rcw-title {
-  //font-weight: bold;
   text-align: left;
   font-family: "system-ui";
-
 }
 
 .rcw-messages-container {
-
   height: 500px;
   max-height: 500px;
-
 }
 
 //customize whole container
 .rcw-conversation-container {
   max-width: 300px;
-  //height: 650px;
-  //max-height: 650px;
-
-
 }
-
-.rcw-message {
-
-}
-
 
 //options for bot text
 .rcw-response .rcw-message-text {
-  //background-color: gray;
   max-width: 300px;
   padding: 5px 15px 5px;
   font-size: 14px;
-
 }
 
 .rcw-message-client {
@@ -69,7 +51,6 @@
   font-size: 14px;
 }
 
-
 //options for closing button
 .rcw-conversation-container .rcw-close-button {
   background-color: rgba(174, 0, 0, 0.9);
@@ -84,15 +65,6 @@
 .rcw-message {
   color: black;
 }
-
-//changing the background color of messages container
-.rcw-messages-container {
-}
-
-//customize box at the bottom of the widget, where also the type in field is included
-.rcw-sender {
-}
-
 
 .rcw-picker-btn {
   display: none;
@@ -135,18 +107,11 @@
   //border-width: 3px;
 }
 
-//quick button container height
-.rcw-conversation-container > .quick-buttons-container {
-
-  // height: 90px;
-}
-
 .rcw-new-message {
   background-color: #f4f7f9;
   margin: 0px;
   display: flex;
   width: 320px;
-
 }
 
 .quick-buttons {

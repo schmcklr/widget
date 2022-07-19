@@ -1,5 +1,4 @@
 .submitButton{
-
   font-size: 1em;
   width: 100%;
   color: rgba(174,0,0,0.9);
@@ -18,12 +17,14 @@
   border-color: rgba(174,0,0,0.9);
   background-color: rgba(174,0,0,0.9);
 }
+
 .submitButton:focus{
   font-size: 1em;
   color: white;
   border-color: rgba(174,0,0,0.9);
   background-color: rgba(174,0,0,0.9);
 }
+
 .submitButton:active{
   font-size: 1em;
   color: white;
